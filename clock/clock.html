@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.clock{
+				width: 400px;
+				height: 400px;
+				margin: 50px auto;
+				position: relative;
+			}
+			.clock img{
+				width: inherit;
+				height: inherit;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="clock">
+			<img src="img/clock.png"/>
+			<img src="img/hour.png" class="h"/>
+			<img src="img/minute.png" class="m"/>
+			<img src="img/second.png" class="s"/>
+			<img src="img/center.png"/>
+		</div>
+		
+		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+		<script type="text/javascript" src="js/jquery.rotate.min.js" ></script>
+		<script type="text/javascript">			
+			function time(){
+				var now = new Date();
+				var h = now.getHours();
+				var m = now.getMinutes();
+				var s = now.getSeconds();
+				
+				$(".h").rotate(h*30+(30/60)*m);
+				$(".m").rotate(m*6+(6/60)*s);
+				$(".s").rotate(s*6);
+			}				
+			time();	
+			setInterval(time,1000);	
+
+			
+			
+			
+		</script>
+		
+	</body>
+</html>
