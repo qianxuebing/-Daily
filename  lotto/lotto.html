@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.lotto{
+				width: 400px;
+				height: 400px;
+				margin: 100px auto;
+				position: relative;
+			}
+			.lotto .big{
+				width: inherit;
+				height: inherit;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			.lotto .smal{
+				width: 230px;
+				height: 230px;
+				position: absolute;
+				top: 85px;
+				left: 85px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="lotto">
+			<img src="img/ly-plate.png" class="big"/>
+			<img src="img/rotate-static.png" class="smal"/>
+		</div>
+		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+		<script type="text/javascript" src="js/jquery.easing.min.js" ></script>
+		<script type="text/javascript" src="js/jquery.rotate.min.js" ></script>
+		<script type="text/javascript">
+			$(".smal").click(function(){
+				var r = Math.random()*360;
+				$(".big").rotate({
+					angle:0,
+					animateTo:1440+r,
+					duration:3000,
+					easing:$.easing.easeOutBounce,
+					callback:function(){
+						if (r >= 90 && r <= 135) {
+							alert("恭喜您中了二等奖！");
+						} else if(r >= 180 && r <= 225){
+							alert("恭喜您中了一等奖！");
+						} else if(r >= 315 && r <= 360){
+							alert("恭喜您中了三等奖！");
+						}else{
+							alert("再接再厉！");
+						}
+					}										
+				});							
+			});			
+		</script>
+	</body>
+</html>
