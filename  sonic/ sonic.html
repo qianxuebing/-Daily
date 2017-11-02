@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.game {
+				background-color: #0DB6CA;
+				width: 616px;
+				height: 520px;
+				margin: 0px auto;
+			}
+			
+			.whole {
+				width: 150px;
+				height: 100px;
+			}
+			
+			.whole img {
+				width: inherit;
+				height: inherit;
+			}
+			
+			.con {
+				margin-top: 4px;
+				width: 616px;
+			}
+			
+			.con .item {
+				width: 150px;
+				height: 100px;
+				background-color: yellow;
+				float: left;
+				margin: 2px;
+				background-image: url(img/2.jpg);
+				background-size: 600px 400px;
+			}
+			/*第一行*/
+			
+			.item-0 {
+				background-position: 0px 0px;
+			}
+			
+			.item-1 {
+				background-position: -150px 0px;
+			}
+			
+			.item-2 {
+				background-position: -300px 0px;
+			}
+			
+			.item-3 {
+				background-position: -450px 0px;
+			}
+			/*第二行*/
+			
+			.item-4 {
+				background-position: 0px -100px;
+			}
+			
+			.item-5 {
+				background-position: -150px -100px;
+			}
+			
+			.item-6 {
+				background-position: -300px -100px;
+			}
+			
+			.item-7 {
+				background-position: -450px -100px;
+			}
+			/*第三行*/
+			
+			.item-8 {
+				background-position: 0px -200px;
+			}
+			
+			.item-9 {
+				background-position: -150px -200px;
+			}
+			
+			.item-10 {
+				background-position: -300px -200px;
+			}
+			
+			.item-11 {
+				background-position: -450px -200px;
+			}
+			/*第三行*/
+			
+			.item-12 {
+				background-position: 0px -300px;
+			}
+			
+			.item-13 {
+				background-position: -150px -300px;
+			}
+			
+			.item-14 {
+				background-position: -300px -300px;
+			}
+			
+			.item-15 {
+				background-image: none !important;
+				background-color: yellow;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1 style="text-align: center;">拼图游戏</h1>
+		<div class="game">
+			<div class="whole">
+				<img src="img/2.jpg" />
+			</div>
+			<div class="con"></div>
+
+		</div>
+		<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+		<script type="text/javascript">
+			var arr = [];
+			var items = [];
+			for(var i = 0; i < 16; i++) {
+				arr.push(i);
+			}
+
+			arr.sort(function() {
+				return Math.random() - 0.5;
+			});
+
+			for(var i = 0; i < 16; i++) {
+				var div = $("<div class='item item-" + arr[i] + "'></div>");
+				$(".game .con").append(div);
+				items.push(div);
+			}
+
+			$(document).keyup(function(e) {
+				$(".item").stop(true,true);
+				var code = e.keyCode;
+				for(var i = 0; i < 16; i++) {
+					if(arr[i] == 15) {
+						switch(code) {
+							case 37:
+								left(i);
+								break;
+							case 38:
+								up(i);
+								break;
+							case 39:
+								right(i);
+								break;
+							case 40:
+								down(i);
+								break;
+						}
+						return;
+					}
+				}
+			});
+			
+			function left(i){
+				if (i % 4 == 3) {
+					return;
+				} 
+				items[i+1].animate({left: "-150px"},300,function(){
+					items[i+1].css("left","0px");
+					items[i].removeClass("item-15").addClass("item-"+arr[i+1]);
+					items[i+1].removeClass("item-"+arr[i+1]).addClass("item-15");
+					var tmp = arr[i];
+					arr[i] = arr[i+1];
+					arr[i+1] = tmp;
+				});
+			}
+			
+			function right(i){
+				if (i % 4 == 0) {
+					return;
+				} 
+				items[i-1].animate({left: "150px"},300,function(){
+					items[i-1].css("left","0px");
+					items[i].removeClass("item-15").addClass("item-"+arr[i-1]);
+					items[i-1].removeClass("item-"+arr[i-1]).addClass("item-15");
+					var tmp = arr[i];
+					arr[i] = arr[i-1];
+					arr[i-1] = tmp;
+				});
+			}
+			function up(i){
+				if (i > 11) {
+					return;
+				} 
+				items[i+4].animate({left: "100px"},300,function(){
+					items[i+4].css("left","0px");
+					items[i].removeClass("item-15").addClass("item-"+arr[i+4]);
+					items[i+4].removeClass("item-"+arr[i+4]).addClass("item-15");
+					var tmp = arr[i];
+					arr[i] = arr[i+4];
+					arr[i+4] = tmp;
+				});
+			}
+			
+			function down(i){
+				if (i < 4) {
+					return;
+				} 
+				items[i-4].animate({left: "-100px"},300,function(){
+					items[i-4].css("left","0px");
+					items[i].removeClass("item-15").addClass("item-"+arr[i-4]);
+					items[i-4].removeClass("item-"+arr[i-4]).addClass("item-15");
+					var tmp = arr[i];
+					arr[i] = arr[i-4];
+					arr[i-4] = tmp;
+				});
+			}
+			
+		</script>
+
+	</body>
+
+</html>
