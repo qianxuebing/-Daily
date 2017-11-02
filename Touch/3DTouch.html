@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.touch{
+				width: 640px;
+				height: 378px;
+				border: 1px solid red;
+				margin: 50px auto;
+				position: relative;				
+			}
+			.touch img{
+				width: inherit;
+				height: inherit;
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="touch"></div>
+		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>		
+		<script type="text/javascript">
+			var count = 78;
+			var arr = [];
+			var index = 0
+			for (var i = 0; i <count; i++) {
+				var img = "<img src='img/itouch("+i+").jpg'/>";
+				arr.push(img);
+				$(".touch").append(img);
+				
+			}
+
+		</script>
+		
+		
+	</body>
+</html>
