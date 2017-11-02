@@ -7,7 +7,6 @@
 			.touch{
 				width: 640px;
 				height: 378px;
-				border: 1px solid red;
 				margin: 50px auto;
 				position: relative;				
 			}
@@ -19,22 +18,86 @@
 				left: 0;
 				display: none;
 			}
+			.demo{
+				width: 90%;
+				height: 20px;
+				background-color: gray;
+				position: absolute;
+				border-radius: 10px;
+				left: 5%;
+				top: 174px;	
+				overflow: hidden;			
+			}
+			.inner{
+				width: 0%;
+				height: inherit;
+				background-color: red;
+			}
 		</style>
 	</head>
 	<body>
-		<div class="touch"></div>
+		<div class="touch">
+			<div class="demo">
+				<div class="inner">				
+				</div>
+			</div>
+		</div>
 		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>		
 		<script type="text/javascript">
-			var count = 78;
 			var arr = [];
-			var index = 0
-			for (var i = 0; i <count; i++) {
-				var img = "<img src='img/itouch("+i+").jpg'/>";
+			var count = 78;
+			var index = 0;
+			var startX = 0;
+			var flag = false;
+			for (var i = 0; i < count; i++) {
+				//转化为JQ对象
+				var img = $("<img draggable='false' src='img/itouch("+i+").jpg'/>");
+				
 				arr.push(img);
 				$(".touch").append(img);
-				
+				$(".inner").css("width",i/77*100+"%");
 			}
+			
+			setTimeout(function(){
+				$(".demo").hide();	
+			},1000);
+			arr[index].show();
+			var t = setInterval(run,20);
 
+			function run(){
+				arr[index].hide();	
+				index = (index+1)%count;
+				arr[index].show();				
+			}
+			
+			$(".touch").hover(function(){
+				clearInterval(t);
+			},function(){
+				t = setInterval(run,20);
+			});
+			
+			$(".touch").on({
+				mousedown:function(e){
+					var x = e.clientX;
+					flag = true;
+				},
+				mouseup:function(){
+					flag = false;
+				},
+				mousemove:function(e){
+					var x = e.clientX;
+					if (flag) {
+						arr[index].hide();
+						if (x > startX) {
+							index = (index-1+count)%count;
+						} else{
+							index = (index+1)%count;
+						}
+						arr[index].show();
+						startX = x;
+					} 	
+				}
+			});			
 		</script>
 		
 		
