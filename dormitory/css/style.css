@@ -1,0 +1,71 @@
+*{margin:0;padding:0;font-size:12px;font-family:"宋体"; list-style: none;}
+a{color:#333;text-decoration:none;}
+a img{ border: 0;}
+.over{overflow:hidden;zoom:1;}
+
+.top{ height:107px; border-bottom:10px solid #0179B5;}
+.topcon{ width:1000px; margin:0 auto;}
+.logo{ float:left; width:145px;}
+.topright{ float:left; width:855px;}
+.guild{ height:30px; line-height:30px; text-align:right;}
+.fwrx{ text-align:right; height:30px; line-height:30px; font-size:14px; font-family:"微软雅黑";}
+.fwrx span{ color:#CE0101; font-style:italic; font-size:20px; font-weight:bold;}
+.nav{ height:35px; margin-top:17px; padding-left:23px;}
+.nav li{ float:left; width:95px; line-height:35px; display:inline; margin-left:9px;}
+.nav li a{ color:#333; font-size:14px; font-weight:bold; width:95px; height:35px; text-align:center; display:block;}
+.nav li.current a,.nav li a:hover{ background-color:#0179B5; color:#fff;}
+/* top end */
+.content{ width:1000px; margin:0 auto;}
+.banner{ margin-top:10px; width: 1000px; height: 420px; overflow: hidden; zoom:1; position: relative;}
+.banleft{ position: absolute; left: 0; top: 158px; width: 47px; height: 91px;}
+.banright{ position: absolute; right: 0; top: 158px; width: 47px; height: 91px;}
+/* banner end */
+.first{ margin-top: 15px;}
+.intro{ float: left; width: 340px; margin-right: 30px;}
+.intro h1{ background: url(../img/img1.png) no-repeat left center; height: 61px; padding-left: 89px; margin-bottom: 20px;}
+.news h1{ background: url(../img/img2.png) no-repeat left center; height: 61px; padding-left: 89px; margin-bottom: 20px;}
+.contact h1{ background: url(../img/img3.png) no-repeat left center; height: 61px; padding-left: 89px; margin-bottom: 20px;}
+.intro h1 a,.news h1 a,.contact h1 a{ display:block;font-family: "微软雅黑"; font-size: 22px; color: #0D7FB8; font-weight: normal; background: url(../img/bg4.png) no-repeat left 50px; line-height: 60px;}
+.news{ float: left; width: 336px;}
+.word p{ text-indent: 2em; line-height: 22px; padding: 0 10px;}
+.newlist li{ line-height: 21px; border-bottom: 1px dashed #ccc; overflow: auto; zoom:1;}
+.newlist li a{ float: left; width: 235px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; background: url(../img/bg3.png) no-repeat left center; padding-left: 15px;}
+.newlist li a:hover{ color: #F68B00;}
+.newlist li span{ float: right; width: 75px; text-align: right;}
+.contact{ float: right; width: 268px;}
+.contact dl{ line-height: 22px; padding-left: 35px;}
+/* first end */
+.title{ background: url(../img/bg1.png) repeat-x left bottom; line-height: 40px; margin-top: 15px;}
+.title span{ float: left;font-family: "微软雅黑"; font-size: 22px; color: #0D7FB8; font-weight: normal; background: url(../img/bg2.png) repeat-x left bottom;}
+.title a{ float: right;color: #0D7FB8; font-family: arial;}
+.case{ margin-top: 20px;}
+.case a{ float: left; width: 184px; height: 145px; padding: 3px; border: 1px solid #ccc; margin-right:8px;}
+
+.partner{ margin-top: 20px;}
+.partner dl{ float: left; width: 138px; margin-right: 4px;}
+.partner dl dt{ width: 136px; height: 93px; border: 1px solid #ccc;}
+.partner dl dd{ text-align: center; line-height: 30px;}
+/* content end */
+.footer{ background-color: #0179B5; margin-top: 20px; padding: 15px 0;}
+.footer p{ line-height: 25px; text-align: center; color: #fff;}
+.footer p a{ color: #fff;}
+
+/**************************** index end **********************************/
+
+.nybanner{ width: 1000px; margin: 10px auto;}
+.show{background: url(../img/bg5.png) repeat-x left top;}
+.showcon{width: 1000px;margin: 0 auto; padding-top: 20px;}
+.showleft{width: 721px;float: left;}
+.showleft h1{background: url(../img/bg6.png) no-repeat left center; font-weight: normal; line-height: 24px; padding-left: 20px;border-bottom: 1px dashed #A0A0A0;}
+.showdl dl{float: left;width: 227px;margin:30px 13px 0 0;}
+.showdl dt{width: 225px;height: 153px;border: 1px solid #ccc;}
+.showdl dd{text-align: center;line-height: 50px;}
+
+.showright{width: 230px; float: right;margin-top: 25px; background:#F7F7F7;padding: 5px 10px 0 10px; font-family: "微软雅黑";border-left: 1px solid #E7E7E7;}
+.showright h1{line-height: 30px; background: url(../img/bg7.png) no-repeat left bottom;font-weight: normal;}
+.showright h1 a{background: url(../img/bg8.png) no-repeat left center;padding-left: 20px;color: #0179B5;}
+.showright dl{margin-top: 10px;}
+.showright dd{line-height: 24px;}
+.showright dd.project{color: #F68B00;}
+.showright .showimg{margin-top: 10px;}
+.footer{margin-top: 50px;}

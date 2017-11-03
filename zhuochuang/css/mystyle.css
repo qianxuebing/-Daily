@@ -1,0 +1,41 @@
+@charset "utf-8";
+*{margin: 0; padding: 0; list-style: none; font-size: 12px;font-family: arial;}
+a{color: #000; text-decoration: none;}
+a img{border: 0;}
+.over{overflow: auto; zoom:1;}
+
+.top,.bancon{width: 1030px; margin: 0 auto;}
+.logo{padding: 25px 0; float: left; width: 343px;}
+.nav{float: right; width: 625px;}
+.nav li{float: left; padding: 45px 10px 0 10px; border-right: 1px solid #A0A0A0;}
+.nav li a{font-size: 14px;}
+.banner{background-color: #F25F34; height: 374px;}
+.bannerbig{border-left: 3px solid #fff; border-right: 3px solid #fff; width: 788px; height: 374px; float: left;}
+.bannersmall{float: left; padding-top: 18px; padding-left: 20px; width: 216px;}
+.bannersmall dl{margin-bottom: 28px; cursor: pointer; overflow: hidden; zoom:1;}
+.bannersmall dt{float: left; margin-right: 10px; width: 46px; height: 46px;}
+.bannersmall dd{color: #fff;}
+.incon{width: 1030px; margin: 0 auto; padding-top: 45px;}
+.left{float: left; width: 211px;margin-right: 62px;}
+.one{font-size: 16px;font-weight: normal;line-height: 30px;border-bottom: 3px solid #F25F33;}
+.tilte{font-size: 16px;font-weight: normal;line-height: 30px;border-bottom: 3px solid #D5C2B4;}
+.leftcon{line-height: 20px; margin-top: 25px;}
+.leftcon a{color: #FE5915;font-weight: bold;}
+.centerL{float: left; width: 214px;margin-right: 62px;}
+.centerL .picbig{margin-top: 20px;width: 203px;height: 105px;background-color: #BCBCBC; padding: 4px;}
+.centerL .picsmall{margin-top: 3px;}
+.centerL .picsmall a{margin: 3px 3px 0 0;}
+.centerR{float: left; width: 211px;}
+.centerR li{line-height: 20px;padding:15px 0 10px 0;border-bottom: 1px solid #DAC8BC;}
+.centerR li a:hover{border-bottom: 1px solid #000;}
+.centerR p{line-height: 40px;}
+.centerR p a{color: #FE5915;font-weight: bold;}
+.right{float: right;width: 211px;}
+.right dl{margin-top: 20px;}
+.right dd{line-height: 30px;background: url(../img/2/bg1.png) no-repeat left 8px;padding-left: 20px;}
+.right dd.tel1{background: url(../img/2/bg2.png) no-repeat left 8px;}
+.right dd.about{background: url(../img/2/bg3.png) no-repeat left 8px;}
+.footer{background-color: #F25F33;color: #FFFFFF; margin: 65px 0 0 0;}
+.footercon{width: 990px;margin: 0 auto;line-height: 24px;padding-left:0 0 10px 40px;} 
+.tel{float: left;}
+.copy{float: right;}
