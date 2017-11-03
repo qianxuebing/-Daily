@@ -7,10 +7,45 @@
 			*{
 				margin: 0;
 				padding: 0;
-				font:14px arial;
+				font:16px arial;
 			}
 			html{
 				background-color: #778899;
+			}
+			.calculator{
+				width: 330px;
+				height: 400px;
+				border: 1px solid lightgray;
+				background-color: darkgrey;
+				margin: 20px auto;
+				padding: 15px;
+			}
+			.LOGO{
+				line-height: 30px;
+			}
+			
+			#screen{
+				width: 320px;
+				height: 50px;
+				background-image: linear-gradient(to bottom,#D3D3D3,#fff);
+				margin-top: 5px;
+				text-align: right;
+				padding-right: 10px;
+				font-size: 20px;
+			}
+			.keys{
+				border: 1px solid lightgray;
+				margin-top: 25px;
+				height: 223px;
+				padding: 8px 0 8px 12px;
+			}
+			.keys .buttons{
+				float: left;
+				width: 50px;
+				height: 40px;
+				text-align: center;
+				background-color: lightgray;
+				margin: 0px 12px 19px 0px;
 			}
 		</style>
 	</head>
@@ -19,7 +54,59 @@
 			<div class="LOGO">
 				<span>简单的计算器</span>
 			</div>
+			<div class="shuru">
+				<input type="text" name="screen" id="screen" value=""  disabled="disabled"/>
+			</div>
+			<div class="keys">
+				<!--第一行-->
+				<input type="button"  id="7" value="7" class="buttons" onclick="jsq(this.id);"/>
+				<input type="button" id="8" value="8" class="buttons" onclick="jsq(this.id);"/>
+				<input type="button"  id="9" value="9" class="buttons" onclick="jsq(this.id);"/>
+				<input type="button" id="Back" value="Back" class="buttons" onclick="tuiGe();"/>
+				<input type="button" id="C" value="C" class="buttons" onclick="clearNum();" style="margin-right: 0px;"/>
+				<!--第二行-->
+				<input type="button"  id="4" value="4" class="buttons" onclick="jsq(this.id);"/>
+				<input type="button" id="5" value="5" class="buttons" onclick="jsq(this.id);"/>
+				<input type="button"  id="6" value="6" class="buttons" onclick="jsq(this.id);"/>
+				<input type="button" id="*" value="*" class="buttons" onclick="jsq(this.id)"/>
+				<input type="button" id="/" value="/" class="buttons" onclick="jsq(this.id)" style="margin-right: 0px;"/>
+				<!--第三行-->
+				<input type="button"  id="1" value="1" class="buttons" onclick="jsq(this.id);"/>
+				<input type="button" id="2" value="2" class="buttons" onclick="jsq(this.id);"/>
+				<input type="button"  id="3" value="3" class="buttons" onclick="jsq(this.id);"/>
+				<input type="button" id="+" value="+" class="buttons" onclick="jsq(this.id)"/>
+				<input type="button" id="-" value="-" class="buttons" onclick="jsq(this.id)" style="margin-right: 0px;"/>
+				<!--第四行-->
+				<input type="button"  id="0" value="0" class="buttons" onclick="jsq(this.id);"/>
+				<input type="button" id="00" value="00" class="buttons" onclick="jsq(this.id);"/>
+				<input type="button"  id="." value="." class="buttons" onclick="jsq(this.id);"/>
+				<input type="button" id="%" value="%" class="buttons" onclick="jsq(this.id)"/>
+				<input type="button" id="eva" value="=" class="buttons" onclick="eva();" style="margin-right: 0px;"/>
+			</div>
 		</div>			
+		
 
+		<script type="text/javascript">
+			var num = 0;
+			function jsq(num){
+				if (num == "%") {
+					document.getElementById('screen').value=Math.round(document.getElementById('screen').value)/100;
+				}else{
+					document.getElementById('screen').value += document.getElementById(num).value;
+				}				
+			}
+			
+			function eva(){
+				document.getElementById('screen').value = eval(document.getElementById('screen').value);
+			}
+			
+			function clearNum(){
+				document.getElementById('screen').value ="";				
+			}
+			function tuiGe(){
+				var arr = document.getElementById('screen');
+				arr.value = arr.value.substring(0,arr.value.length-1);
+			}
+		</script>
 	</body>
 </html>
