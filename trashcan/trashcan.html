@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				margin: 0;
+				padding: 0;
+			}
+			.left{
+				float: left;
+			}
+			.right{
+				float: right;
+			}
+			.clear:after{
+				display: block;
+				content: "";
+				clear: both;
+			}
+			.box{
+				width: 450px;
+				height: 400px;
+				border: 1px solid gray;
+				margin: 50px auto;
+				padding: 20px;
+			}
+			.image{
+				margin-bottom: 20px;
+			}
+			.image img{
+				width: 200px;
+				height: 250px;
+			}
+			ul li{
+				line-height: 30px;
+				width: 150px;
+				text-align: center;
+				list-style: none;
+				margin-top: 5px;
+				background-color: #999;
+				color: #fff;
+			}
+			#trash2{
+				display: none;
+			}
+			.delete{
+				clear: both;
+			}
+			.delete>p{
+				font-size: 18px;
+				font-weight: bold;
+				color: #ff0000;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box clear">
+			<div class="image left">
+				<img src="img/trash1.png" id="trash1" draggable="false"/>
+				<img src="img/trash2.jpg" id="trash2"/>
+			</div>
+			<ul class="right">
+				<li draggable="true">文章1</li>
+				<li draggable="true">文章2</li>
+				<li draggable="true">文章3</li>
+				<li draggable="true">文章4</li>
+				<li draggable="true">文章5</li>
+			</ul>
+			<div class="delete">
+				<p>已删除文章：</p>
+				<ol></ol>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			var li = document.getElementsByTagName("ul")[0].children;
+			var img = document.getElementsByClassName("image")[0];
+			var trash1 = document.getElementById("trash1");
+			var trash2 = document.getElementById("trash2");
+			var ol = document.getElementsByTagName("ol")[0];
+			var tmp = 0;
+			for (var i = 0; i<li.length; i++) {
+				li[i].ondragstart = function(){
+					tmp = this;
+				}
+			}
+			
+			img.ondragover = function(e){
+				e.preventDefault();
+			}
+			img.ondrop = function(){
+				ol.appendChild(tmp);
+				trash1.style.display = "none";
+				trash2.style.display = "block";
+			}
+		</script>
+		
+		
+	</body>
+</html>
