@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body,p{
+				margin: 0;
+				padding: 0;
+			}
+	
+			.left{
+				float: left;
+			}
+			.right{
+				float: right;
+			}
+			.clear:after{
+				display: block;
+				content: "";
+				clear: both;
+			}
+			.music{
+				width: 360px;
+				background-color: #999;
+				margin: 100px auto;
+				padding: 10px;
+			}
+			.image{
+				margin-right: 20px;
+			}
+			.image img{
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				-webkit-animation: music_running 2s linear infinite;
+				-webkit-animation-play-state: paused;
+			}
+			.btn{
+				margin-top: 39px;				
+			}
+			.btn>span{
+				float: left;
+				display: inline-block;
+				background: url(img/ico_btn_player.png);
+				margin-right: 15px;
+
+			}
+		
+			.btn .prev{
+				width: 16px;
+				height: 19px;
+				background-position: -64px 0;
+				margin-top: 3px;
+			}
+			.btn .next{
+				width: 16px;
+				height: 19px;
+				background-position: -64px -30px;
+				margin-top: 3px;
+			}
+			.btn .play{
+				width: 22px;
+				height: 25px;
+				background-position: -64px -60px;
+			}
+			.btn .pause{
+				width: 22px;
+				height: 25px;
+				background-position: -64px -85px;
+			}
+			.show_time{
+				margin-top: 39px;
+			}
+			.show_time>p{
+				text-align: right;
+				color: #fff;
+			}
+			@-webkit-keyframes music_running{
+				from{
+					-webkit-transform: rotate(0deg);
+				}
+				to{
+					-webkit-transform: rotate(359deg);
+					
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<audio id="mp3">
+			<source src="media/人生路.mp3" type="audio/mp3"></source>
+		</audio>
+		<div class="music clear">			
+			<div class="image left">
+				<img src="img/人生路.jpg"/>
+			</div>
+			<div class="btn clear left">
+				<span class="prev"></span>
+				<span class="play"></span>
+				<span class="next"></span>
+			</div>
+			<div class="show_time right">
+				<input type="range"  id="range" min="0" max="100" value="0" />
+				<p id="time">00:00/00:00</p>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			var play = document.getElementsByClassName("play")[0];
+			var mp3 = document.getElementById("mp3");
+			var img = document.getElementsByClassName("image")[0];
+			var range = document.getElementById("range");
+			var time = document.getElementById("time");
+			var prev = document.getElementsByClassName("prev")[0];
+			var next = document.getElementsByClassName("next")[0];
+			var music = [{mp3:"人生路.mp3",img:"人生路.jpg"},{mp3:"小苹果.mp3",img:"小苹果.jpeg"},{mp3:"刚好遇见你.mp3",img:"刚好遇见你.jpg"}];
+			var index = 0;
+			var count = music.length;
+			console.log(count);
+
+			play.onclick = function(){
+				if (mp3.paused) {
+					mp3.play();
+					img.style.webkitAnimationPlayState = "running";
+					play.setAttribute("class","pause");
+				} else{
+					mp3.pause();
+					img.style.webkitAnimationPlayState = "paused";
+					play.setAttribute("class","play");
+				}
+			}
+			
+			prev.onclick = function(){
+				mp3.pause();
+				index = (index-1+count)%count;
+				mp3.src = "media/"+music[index].mp3;
+				img.children[0].setAttribute("src","img/"+music[index].img);
+				mp3.currentTime = 0;
+				mp3.play();
+			}
+
+			next.onclick = function(){
+				mp3.pause();
+				index = (index + 1)%count;
+				mp3.src = "media/"+music[index].mp3;
+				img.children[0].setAttribute("src","img/"+music[index].img);
+				mp3.currentTime = 0;
+				mp3.play();
+			}
+
+			var t = setInterval(function(){
+				var total = mp3.duration;
+				var current = mp3.currentTime;
+				range.value = current/total*100;
+				var tm = Math.floor(total/60);
+				tm = tm<10? "0"+tm:tm;
+				var ts = Math.floor(total%60);
+				ts = ts<10? "0"+ts:ts;
+				var cm = Math.floor(current/60);
+				cm = cm<10? "0"+cm:cm;
+				var cs = Math.floor(current%60);
+				cs = cs<10? "0"+cs:cs;
+				time.innerText = cm+":"+cs+"/"+tm+":"+ts;
+			},1000);			
+		</script>
+		
+		
+	</body>
+</html>
