@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#canvas {
+				width: 400px;
+				height: 400px;
+				/*border: solid 1px red;*/
+				display: block;
+				margin: 50px auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<canvas id="canvas" width="800" height="800"></canvas>
+
+		<script type="text/javascript">
+			var canvas = document.querySelector("#canvas");
+			var cxt = canvas.getContext("2d");
+
+			cxt.translate(400, 400);
+
+			drawClock();
+			drawNeedle();
+
+			setInterval(function() {
+				del();
+				drawClock();
+				drawNeedle();
+			}, 1000);
+
+			function drawClock() {
+				cxt.font = "bold 40px '微软雅黑'";
+				cxt.textAlign = "center";
+				cxt.textBaseline = "middle";
+
+				cxt.beginPath();
+				cxt.arc(0, 0, 380, 0, Math.PI * 2);
+				cxt.lineWidth = 10;
+				cxt.strokeStyle = "blue";
+				cxt.stroke();
+
+				for(var i = 0; i < 60; i++) {
+					var r = 3;
+					var x = Math.cos(Math.PI / 180 * 6 * i) * 350;
+					var y = Math.sin(Math.PI / 180 * 6 * i) * 350;
+					cxt.beginPath();
+					cxt.fillStyle = "black";
+					if(i % 5 == 0) {
+						var n = (i / 5 + 3) % 12 == 0 ? 12 : ((i / 5 + 3) % 12);
+						cxt.fillStyle = "red";
+						cxt.fillText(n, x, y);
+					} else {
+						cxt.arc(x, y, r, 0, Math.PI * 2);
+						cxt.fill();
+					}
+				}
+				cxt.closePath();
+			}
+
+			function drawNeedle() {
+
+				var now = new Date();
+				var h = now.getHours();
+				var m = now.getMinutes();
+				var s = now.getSeconds();
+				
+				cxt.font = "bold 40px '仿宋'";
+				cxt.fillStyle = "orangered";
+				cxt.fillText(now.toLocaleDateString(),0,200);
+				
+				
+				cxt.save();
+				cxt.rotate(Math.PI / 180 * 6 * s);
+				cxt.beginPath();
+				cxt.lineTo(0, 40);
+				cxt.lineTo(0, -300);
+				cxt.strokeStyle = "red";
+				cxt.stroke();
+				cxt.restore();
+
+				cxt.save();
+				cxt.rotate(Math.PI / 180 * (6 * m + 6 / 60 * s));
+				cxt.beginPath();
+				cxt.lineTo(0, 40);
+				cxt.lineTo(0, -240);
+				cxt.strokeStyle = "black";
+				cxt.lineWidth = 10;
+				cxt.stroke();
+				cxt.restore();
+
+				cxt.save();
+				cxt.rotate(Math.PI / 180 * (30 * h + 30 / 60 * m));
+				cxt.beginPath();
+				cxt.lineTo(0, 40);
+				cxt.lineTo(0, -190);
+				cxt.strokeStyle = "black";
+				cxt.lineWidth = 20;
+				cxt.stroke();
+				cxt.restore();
+
+				cxt.beginPath();
+				cxt.arc(0, 0, 20, 0, Math.PI * 2);
+				cxt.fillStyle = "yellow";
+				cxt.fill();
+			}
+
+			function del() {
+				cxt.clearRect(-400, -400, 800, 800);
+			}
+		</script>
+
+	</body>
+
+</html>
