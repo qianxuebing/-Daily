@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<style type="text/css">
+		
+		.box {
+			width: 700px;
+			height: 500px;
+			margin: 50px auto;
+			border: 1px solid black;
+			background-color: pink;
+			position: relative;
+		}
+		
+		.image {
+			width: 300px;
+			height: 300px;
+			/*background-color: greenyellow;*/
+			margin-left: 50px;
+			margin-top: 30px;
+			-webkit-animation: image-rotate 3s linear infinite;
+			-webkit-animation-play-state: paused;
+		}
+		
+		.image img {
+			width: inherit;
+			height: inherit;
+			border-radius: 50%;
+		}
+		
+		.time-show {
+			width: 300px;
+			height: 30px;
+			margin-left:40px ;
+			margin-top: 30px;
+			line-height: 30px;
+			overflow: hidden;
+		}
+		
+		.time-show * {
+			float: left;
+		}
+		
+		.time-show p {
+			margin: 0px;
+			font-size: 20px;
+			
+		}
+		
+		.time-show input {
+			width: 190px;
+			height: 30px;
+			text-align: center;
+		}
+		
+		.btn-group {
+			margin-left: 40px;
+			margin-top: 20px;			
+		}
+		
+		.btn-group .btn {
+			float: left;
+			background-image: url(media/ico_btn_player.png);
+			margin-top: 20px;
+			margin-left: 112px;	
+		}
+		
+		.btn-group .btn:first-child {
+			margin-left: 0px;
+		}			
+		
+		.btn-group .btn-prev {
+			background-position: -90px 0px;
+			width: 20px;
+			height: 22px;
+		}
+		
+		.btn-group .btn-play {
+			background-position: -90px -60px;
+			width: 24px;
+			height: 28px;
+		}
+		
+		.btn-group .btn-pause {
+			background-position: -90px -90px;
+			width: 24px;
+			height: 28px;
+		}
+		
+		.btn-group .btn-next {
+			background-position: -90px -30px;
+			width: 20px;
+			height: 22px;
+		}
+		
+		.list {
+			width: 200px;
+			height: 400px;
+			top: 40px;
+			position: absolute;
+			margin-left: 430px;
+			padding-left: 20px;	
+			padding-right: 20px;
+			border: 1px solid gray;
+		}
+		
+		.list .item {
+			width: inherit;
+			height: 40px;
+			font-size: 20px;
+			box-sizing: border-box;
+			white-space: nowrap;
+			overflow: hidden;
+			/*background-color: greenyellow;*/		
+		}
+		
+		.list .item:first-child {
+			margin-top: 20px;
+		}
+		
+		@-webkit-keyframes image-rotate{
+			from{
+				-webkit-transform:rotate(0deg);
+			}
+			to{
+				-webkit-transform:rotate(359deg);
+			}
+		}
+		
+	</style>
+	
+	<body>
+		<audio id="mp3" src="media/My Sunshine.mp3" type= "audio/mp3"></audio>
+		<div class="box">
+			<div class="image">
+				<img src="media/My Sunshine.JPG"/>
+			</div>
+			<div class="time-show">
+				<p id="current-time">00:00</p>
+				<input type="range" name="range" id="range" value="0" />
+				<p id="totle-time">00:00</p>
+			</div>
+			<div class="btn-group">
+				<div class="btn btn-prev"></div>
+				<div class="btn btn-play"></div>
+				<div class="btn btn-next"></div>
+			</div>
+			<div class="list"></div>
+		</div>
+		
+		<script type="text/javascript">
+			var mp3 = document.getElementById("mp3");
+			var play = document.getElementsByClassName("btn-play")[0];
+			var prev = document.getElementsByClassName("btn-prev")[0];
+			var next = document.getElementsByClassName("btn-next")[0];
+			var image = document.getElementsByClassName("image")[0];
+			var range = document.getElementById("range");
+			var timeLeft = document.getElementById("current-time");
+			var timeRight = document.getElementById("totle-time");
+			var list = document.getElementsByClassName("list")[0];
+			var music = [{mp3:"My Sunshine.mp3",img:"My Sunshine.JPG"},
+						{mp3:"大王叫我来巡山.mp3",img:"大王叫我来巡山.JPG"},
+						{mp3:"淋雨一直走.mp3",img:"淋雨一直走.JPG"},
+						{mp3:"夏至未至.mp3",img:"夏至未至.JPG"},
+						{mp3:"一千年以后.mp3",img:"一千年以后.JPG"},
+						{mp3:"勇气.mp3",img:"勇气.JPG"},
+						{mp3:"山水之间 .mp3",img:"山水之间.JPG"}];
+			var count = music.length;
+			var index = 0;
+			var TmpIndex = 0;
+			for(var i=0;i<music.length;i++){
+				var div = document.createElement("div");
+				div.setAttribute("class","item");
+				div.setAttribute("draggable","true");
+				div.setAttribute("data-index",i);
+				div.innerText = (i+1)+music[i].mp3;
+				list.appendChild(div);
+			}
+			
+			var item = document.getElementsByClassName("item");
+			
+			for (var i = 0; i < item.length; i ++) {
+				item[i].ondragstart = function() {
+					mp3.pause();
+					play.setAttribute("class","btn btn-play");
+					image.style.webkitAnimationPlayState = "paused";
+					TmpIndex = this.getAttribute("data-index");
+				}
+			};
+			
+			for (var i = 0; i < item.length; i ++) {
+				item[i].ondragend = function() {
+					mp3.play();
+					image.style.webkitAnimationPlayState = "running";
+					play.setAttribute("class","btn btn-pause");
+				}
+			};
+							
+			image.ondragover= function(e){
+				e.preventDefault();
+			};
+			
+			image.ondrop = function(){
+				index = TmpIndex;
+				mp3.src = "media/" + music[index].mp3;
+				image.children[0].setAttribute("src","media/" + music[index].img);
+				mp3.play();
+				image.style.webkitAnimationPlayState = "running";
+				play.setAttribute("class","btn btn-pause");	
+				
+			};
+						
+			play.onclick = function() {
+				if (mp3.paused) {
+					mp3.play();
+					image.style.webkitAnimationPlayState = "running";
+					play.setAttribute("class","btn btn-pause");
+				} else{
+					mp3.pause();
+					image.style.webkitAnimationPlayState = "paused";
+					play.setAttribute("class","btn btn-play");
+				}
+			};
+			
+			prev.onclick = function() {
+				mp3.pause();
+				index = (index -1 +count) % count;
+				mp3.src = "media/" + music[index].mp3;
+				image.children[0].setAttribute("src","media/" + music[index].img);
+				mp3.play();
+			};
+			
+			next.onclick = function(){
+				mp3.pause();
+				index = (index + 1) % count;
+				mp3.src = "media/" + music[index].mp3;
+				image.children[0].setAttribute("src","media/" + music[index].img);
+				mp3.play();
+			};
+			
+			setInterval(function(){
+				var totle = mp3.duration;
+				var current = mp3.currentTime;
+				if(!mp3.paused) {
+					range.value = current / totle * 100;					
+				};				
+				var tm = Math.floor(totle / 60);
+				var ts = Math.floor(totle % 60);
+				var cm = Math.floor(current / 60);
+				var cs = Math.floor(current % 60);				
+				tm = tm<10?"0" + tm:tm;
+				ts = ts<10?"0" + ts:ts;
+				cm = cm<10?"0" + cm:cm;
+				cs = cs<10?"0" + cs:cs;				
+				timeLeft.innerText = cm + ":" + cs;
+				timeRight.innerText = tm + ":" + ts;					
+			});
+		</script>				
+	</body>
+</html>

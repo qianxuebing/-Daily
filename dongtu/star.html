@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>五星红旗</title>
+		<style type="text/css">			
+			#canvas{
+				width: 400px;
+				height:400px;
+				display: block;
+				margin: 50px auto;
+				background-color: red;
+			}			
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="800" height="800"></canvas>
+		
+		<script type="text/javascript">
+			var canvas = document.querySelector("#canvas");
+			canvas.width = 800;
+			canvas.height = 800;
+			var context = canvas.getContext("2d");
+			
+			function star(r,R,x,y){				
+				context.beginPath();
+				for (var i = 0; i<5; i++) {
+					context.lineTo(Math.cos(Math.PI/180*(18+72*i))*R,Math.sin(Math.PI/180*(18+72*i))*R*-1);
+					context.lineTo(Math.cos(Math.PI/180*(54+72*i))*r,Math.sin(Math.PI/180*(54+72*i))*r*-1);
+				}
+				context.closePath();
+				context.fillStyle = "yellow";
+				context.fill();
+			}
+			context.translate(200,200);
+			star(70,140,0,0);
+			
+			context.translate(150,-100);
+			star(20,40,0,0);
+			context.translate(20,100);
+			star(20,40,0,0);
+			context.translate(-20,100);
+			star(20,40,0,0);
+			context.translate(-50,80);
+			star(20,40,0,0);		
+		</script>
+	</body>
+</html>
