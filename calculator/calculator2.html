@@ -4,9 +4,33 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>简单的计算器</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
+    <style type="text/css">
+        table {
+            width: 30%;
+            height: 400px;
+            margin: 20px auto;
+            background: #ddd;
+            border: 3px solid orange;
+            padding: 20px;
+            font-size: 22px;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px 10px;
+            box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.5) inset;
+            outline: none;
+            box-sizing: border-box;
+            background: #fff;
+
+        }
+
+        input[type=text] {
+            text-align: right;
+            font-size: 24px;
+        }
     </style>
 </head>
 
@@ -14,71 +38,159 @@
 
     <table>
         <tr>
-            <td colspan="2">
-                <input type="text" value="0">
+            <td colspan="4">
+                <input type="text" value="0" id="show-result">
+            </td>          
+        </tr>
+        <tr>
+            <td>
+                <input class="number" type="button" value="7">
             </td>
             <td>
-                <input type="button" value="清除">
+                <input class="number" type="button" value="8">
             </td>
             <td>
-                <input type="button" value="退格">
+                <input class="number" type="button" value="9">
+            </td>
+            <td>
+                <input id="plus" class="compute" type="button" value="+">
             </td>
         </tr>
         <tr>
             <td>
-                <input type="button" value="7">
+                <input class="number" type="button" value="4">
             </td>
             <td>
-                <input type="button" value="8">
+                <input class="number" type="button" value="5">
             </td>
             <td>
-                <input type="button" value="9">
+                <input class="number" type="button" value="6">
             </td>
             <td>
-                <input type="button" value="+">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="button" value="4">
-            </td>
-            <td>
-                <input type="button" value="5">
-            </td>
-            <td>
-                <input type="button" value="6">
-            </td>
-            <td>
-                <input type="button" value="-">
+                <input id="del" class="compute" type="button" value="-">
             </td>
         </tr>
         <tr>
             <td>
-                <input type="button" value="1">
+                <input class="number" type="button" value="1">
             </td>
             <td>
-                <input type="button" value="2">
+                <input class="number" type="button" value="2">
             </td>
             <td>
-                <input type="button" value="3">
+                <input class="number" type="button" value="3">
             </td>
             <td>
-                <input type="button" value="*">
+                <input id="ride" class="compute" type="button" value="*">
             </td>
         </tr>
         <tr>
             <td colspan="2">
-                <input type="button" value="=">
+                <input id="result" type="button" value="=">
             </td>
             <td>
                 <input type="button" value=".">
             </td>
             <td>
-                <input type="button" value="/">
+                <input id="division" class="compute" type="button" value="/">
             </td>
         </tr>
-
     </table>
+
+    <script src="jquery-2.1.0.js"></script>
+    <script>
+        $(function () {
+            //存取数字一的容器
+            var num = "";
+            //声明一个变量char，来存放运算符
+            var char = "";
+            //申明变量num2，来存放数字2的值
+            var num2 = "";
+            //申明一个变量，来存放结果
+            var result;
+            var state = false;
+            $("table").on("click", "input.number", function () {
+                //获取当前点击的value值
+                var value = $(this).val();
+                if (char == "") {
+                    //如果点击了等号，并且char为空，清空num和num2的值，方便下面开始存新的数字1
+                    if (state) {
+                        num = "";
+                        num2 = "";
+                        //把值设置为false，意义表示没点击等号,没点击等号的时候不让这个if语句执行
+                        state = false;
+                    }
+                    //因为 value和num是字符串，加号在这里是连接字符串，然后存进变量num里面
+                    num += value;
+                    //把变量num在input里面输出
+                    $("#show-result").val(num);
+                } else {
+                    num2 += value;
+                    $("#show-result").val(num + char + num2);
+                }
+
+            });
+
+            //添加运算符点击事件
+            $("input.compute").click(function () {
+                //判断num2是否有值，如果有值的情况下点击运算符表示要做运算操作，输出结果和运算符号，
+                if (num2) {
+                    switch (char) {
+                        case "+":
+                            result = parseFloat(num) + parseFloat(num2);
+                            break;
+                        case "-":
+                            result = parseFloat(num) - parseFloat(num2);
+                            break;
+                        case "*":
+                            result = parseFloat(num) * parseFloat(num2);
+                            break;
+                        case "/":
+                            result = parseFloat(num) / parseFloat(num2);
+                            break;
+
+                    }
+                    // 把结果存进变量num
+                    num = result;
+                    // 把num2清空方便再次点击存数字2
+                    num2 = "";
+                    $("#show-result").val(num + char);
+                }
+
+                //获取当前点击的运算符存进变量char中
+                char = $(this).val();
+                //在input框中输出num+char
+                $("#show-result").val(num + char);
+            });
+
+            //给等于号添加一个事件
+            $("#result").click(function () {
+                //做一个判断，来根据点击的不同运算符，做不同的运算
+                switch (char) {
+                    case "+":
+                        result = parseFloat(num) + parseFloat(num2);
+                        break;
+                    case "-":
+                        result = parseFloat(num) - parseFloat(num2);
+                        break;
+                    case "*":
+                        result = parseFloat(num) * parseFloat(num2);
+                        break;
+                    case "/":
+                        result = parseFloat(num) / parseFloat(num2);
+                        break;
+                }
+
+                //输出结果
+                $("#show-result").val(result);
+                //把字符串设为空，方面存取下一步清空操作，然后开始存取数字1的值
+                char = "";
+                //点击了等号后值变为true
+                state = true;
+            });
+
+        })
+    </script>
 
 </body>
 
