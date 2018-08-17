@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css"/>
+		
+		<style type="text/css">
+			
+			.wrapper{
+				width: 300px;
+				padding: 10px;
+				box-shadow: 0 0 2px rgba(0,0,0,0.2);
+				box-sizing: border-box;
+				margin: 20px auto;
+			}
+			.wrapper label{
+				display: flex;
+				cursor: pointer;
+				height: 30px;
+				position: relative;
+			}
+			
+			label .check-input{
+				width: 16px;
+				height: 16px;
+				appearance: none;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				box-shadow: 0 0 2px rgba(0,0,0,0.2);
+				background-color: lightblue;
+			}
+			
+			label .fa-check{
+				position: absolute;
+				left: 1px;
+				top: 2px;
+				color: #fff;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="wrapper">
+			<label>
+				<input type="checkbox" class="check-input"/>
+				<span>111111</span>
+				<i class="fa fa-fw"></i> 
+			</label>
+			<label>
+				<input type="checkbox" class="check-input"/>
+				<span>22222</span>
+				<i class="fa fa-fw"></i>
+			</label>
+			<label>
+				<input type="checkbox" class="check-input"/>
+				<span>33333</span>
+				<i class="fa fa-fw"></i>
+			</label>
+			<label>
+				<input type="checkbox" class="check-input"/>
+				<span>44444</span>
+				<i class="fa fa-fw"></i>
+			</label>
+			<label>
+				<input type="checkbox" class="check-input"/>
+				<span>55555</span>
+				<i class="fa fa-fw"></i>
+			</label>
+		</div>
+		
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript">
+			
+			$(".wrapper").on("click",".check-input",function(){
+				$(this).parent().find('.fa').toggleClass('fa-check');
+			});
+			
+			
+		</script>
+		
+	</body>
+</html>
