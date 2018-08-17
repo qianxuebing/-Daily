@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<style type="text/css">
+			/*无图片时去掉边框*/
+			img[src=""],
+			img:not([src]) {
+				opacity: 0;
+			}
+			
+			.demo {
+				display: flex;
+				display: -webkit-flex;
+			}
+			
+			.demo img {
+				display: inline-flex;
+				display: -webkit-inline-flex;
+				width: 25%;
+				height: auto;
+			}
+		</style>
+
+	</head>
+
+	<body>
+
+		<div class="demo">
+			<img src="img/1.jpg" />
+			<img src="" />
+			<img src="" />
+			<img src="img/5.jpg" />
+		</div>
+
+	</body>
+
+</html>
