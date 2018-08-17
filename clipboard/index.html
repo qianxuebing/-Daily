@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<style type="text/css">
+			.box {
+				width: 300px;
+				height: 40px;
+				margin: 20px auto;
+				display: flex;
+				display: -webkit-flex;
+				box-sizing: border-box;
+			}
+			
+			.box input {
+				width: 198px;
+				border: 1px solid #ddd;
+				height: inherit;
+				outline: none;
+			}
+			
+			.box span {
+				width: 98px;
+				height: 42px;
+				line-height: 42px;
+				text-align: center;
+				border: 1px solid #ddd;
+				background-color: lightblue;
+				cursor: pointer;
+			}
+		</style>
+
+	</head>
+
+	<body>
+
+		<div class="box">
+			<input type="text">
+			<span class="copy" data-clipboard-action="copy" data-clipboard-target="input">q123复制</span>
+		</div>
+
+		<script type="text/javascript" src="js/clipboard.min.js"></script>
+		<script type="text/javascript">
+			var clipboard = new ClipboardJS('.copy');
+
+			clipboard.on('success', function(e) {
+				console.log(e);
+			});
+
+			clipboard.on('error', function(e) {
+				console.log(e);
+			});
+		</script>
+
+	</body>
+
+</html>
