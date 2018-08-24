@@ -37,7 +37,17 @@
 				top: 2px;
 				color: #fff;
 			}
-			
+			.btn-chenck{
+				width: 300px;
+				margin: 10px auto;
+			}
+			.btn-chenck input{
+				width: 80px;
+				height: 30px;
+				background: lavender;
+				border: 1px solid darkgray;
+				color: lightcoral;
+			}
 			
 		</style>
 	</head>
@@ -70,13 +80,44 @@
 				<i class="fa fa-fw"></i>
 			</label>
 		</div>
+		<div class="btn-chenck">
+			<input type="button" name="" id="checkAll" value="全选" />		
+			<input type="button" name="" id="checkNo" value="不选" />
+			<input type="button" name="" id="checkReverse" value="反选" />
+		</div>
+		
+
 		
 		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 		<script type="text/javascript">
-			
-			$(".wrapper").on("click",".check-input",function(){
-				$(this).parent().find('.fa').toggleClass('fa-check');
-			});
+			$(function(){
+				$(".wrapper").on("click",".check-input",function(){
+					$(this).parent().find('.fa').toggleClass('fa-check');
+				});
+				
+				// 全选
+				$("#checkAll").click(function(){
+					$(".wrapper label i").each(function(){
+						$(this).addClass("fa-check");
+					})
+				})
+				
+				// 不选 
+				$("#checkNo").click(function(){
+					$(".wrapper label i").each(function(){
+						$(this).removeClass("fa-check");
+					})
+				})
+				
+				//反选 
+				$("#checkReverse").click(function(){
+					$(".wrapper label i").each(function(){
+						$(this).toggleClass("fa-check");
+					})
+				})
+				
+				
+			})
 			
 			
 		</script>
