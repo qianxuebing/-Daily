@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正在加载中...</title>
+    <style type="text/css">
+        .mask{
+			position: fixed;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(0,0,0,0.1);
+		}
+		.mask-loading{
+			position: absolute;
+			top: 40%;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.mask-loading div{
+			width: 20px;
+			height: 20px;
+			float: left;
+			margin-right: 5px;
+			background-color: #0179B5;
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+			border-radius: 50%;
+		}
+		
+		.mask-loading div:nth-child(1){
+			-webkit-animation: loading 0.5s ease 0s infinite alternate;
+		    animation: loading 0.5s ease 0s infinite alternate;
+		}
+		.mask-loading div:nth-child(2){
+			-webkit-animation: loading 0.5s ease 0.1s infinite alternate;
+		    animation: loading 0.5s ease 0.1s infinite alternate;
+		}
+		.mask-loading div:nth-child(3){
+			margin-right: 0;
+			-webkit-animation: loading 0.5s ease 0.2s infinite alternate;
+		    animation: loading 0.5s ease 0.2s infinite alternate;
+		}
+		
+		@keyframes loading{
+			from{
+				/*缩放*/
+				transform:scale(1);
+				background-color: lightcoral;
+			}
+		
+			to{
+				transform: scale(0.5);
+				background-color: #0179B5;
+			}
+		}
+		
+		@-webkit-keyframes loading{
+			from{
+				transform: scale(1);
+				background-color: lightcoral;
+			}
+			
+			to{
+				transform: scale(0.5);
+				background-color: #0179B5;
+			}
+		}
+		
+		@-moz-keyframes loading{
+			from{
+				transform: scale(1);
+				background-color: lightcoral;
+			}
+			
+			to{
+				transform: scale(0.5);
+				background-color: #0179B5;
+			}
+		}
+		
+		@-o-keyframes loading{
+			from{
+				transform: scale(1);
+				background-color: lightcoral;
+			}
+			
+			to{
+				transform: scale(0.5);
+				background-color: #0179B5;
+			}
+		}
+		        
+    </style>
+</head>
+<body>
+    <div class="mask">
+    	<div class="mask-loading">
+    		<div></div>
+			<div></div>
+			<div></div>
+			<p>Loading...</p>			
+    	</div>
+    </div>
+	
+	<script src="js/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		showLoading(true);
+		function showLoading(open){
+			if(open==null){
+				open=true
+			}
+			if (open) {
+				$(".mask").show();
+			} else{
+				$(".mask").hide();
+			}
+		}
+		
+		
+	</script>
+</body>
+</html>
