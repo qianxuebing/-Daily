@@ -1,0 +1,91 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+@font-face {
+  font-family: 'iconfont';  /* project id 202290 */
+  src: url('//at.alicdn.com/t/font_202290_wm6i8gftwk.eot');
+  src: url('//at.alicdn.com/t/font_202290_wm6i8gftwk.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_202290_wm6i8gftwk.woff') format('woff'),
+  url('//at.alicdn.com/t/font_202290_wm6i8gftwk.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_202290_wm6i8gftwk.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-shouji1:before { content: "\e711"; }
+
+
+
+#mask {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: #000;
+	color: #fff;
+	z-index: 999;
+}
+
+#mask .mask-content {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	font-size: 14px;
+	text-align: center;
+	transform: translate(-50%);
+	-webkit-transform: -webkit-translate(-50%);
+}
+
+.mask-pic {
+	width: 120px;
+	height: 120px; 
+	margin: 0 auto;
+	text-align: center;
+}
+
+.mask-pic i {
+	display: block;
+	margin: 0 auto;
+	color: #fff;
+	-webkit-animation: maskAni 1.5s ease infinite alternate;
+	animation: maskAni 1.5s ease infinite alternate;
+	font-size: 100px;
+}
+
+.mask-content p {
+	font-size: 14px;
+	padding-top: 10px;
+	color: #fff;
+}
+
+
+
+
+@-webkit-keyframes maskAni {
+	0%,
+	30% {
+		-webkit-transform: rotate(-90deg)
+	}
+	100%,
+	70% {
+		-webkit-transform: rotate(0)
+	}
+}
+@keyframes maskAni {
+	0%,
+	30% {
+		transform: rotate(-90deg)
+	}
+	100%,
+	70% {
+		transform: rotate(0)
+	}
+}

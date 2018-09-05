@@ -25,7 +25,7 @@
 				$("#select-font-size option").eq(i).css('font-size',fontSize[i]);
 			}
 			
-			$('body').on("change","#select-font-size",()=>{
+			$('body').on("change","#select-font-size",function(){
 				var fontCss = $("#select-font-size").find('option:selected').css('font-size');
 				$("p").css('font-size',fontCss);
 			})

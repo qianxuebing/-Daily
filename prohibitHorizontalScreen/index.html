@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="index.css"/>
+		<title>禁止横屏</title>
+	</head>
+	<body>
+		
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script>
+			
+			$(function(){
+				prohibit();
+			})
+			
+			
+			/* (function rotate() {
+				var orientation = window.orientation;				
+				if (orientation == 90 || orientation == -90) {
+					if($("#mask").length > 0){
+						$("#mask").show();	
+					}else{					
+						prohibit()
+					}
+				}else if(orientation == 0){
+					$("#mask").hide();		
+				}
+				window.onorientationchange = function () {
+					document.body.style.display = "block";
+					rotate();
+				};
+			})() */
+			
+			function prohibit(){
+				var html = 	`<div id="mask">
+								<div class="mask-content">
+									<div class="mask-pic">
+										<i class="iconfont icon-shouji1"></i>
+									</div>
+									<p>为了更好的体验,请竖屏查看</p>
+								</div>
+							</div>`
+				$("body").prepend(html);
+			}
+			
+		</script>
+		
+	</body>
+</html>
