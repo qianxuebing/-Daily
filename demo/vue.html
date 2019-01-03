@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue</title>
+    <style>
+        p {
+            color: red;
+        }
+
+        button {
+            width: 100px;
+            height: 40px;
+            background-color: lightgreen;
+            font-size: 20px;
+            color: #fff;
+            border-radius: 4px;
+            border: 1px solid yellowgreen;
+            margin-top: 10px;
+        }
+
+        .completed {
+            text-decoration: line-through;
+        }
+        table {
+            border: 1px solid black;
+        }
+        table {
+            width: 100%;
+        }
+
+        th {
+            height: 50px;
+        }
+        th, td {
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="app">
+        <p v-show="!meg">请输入内容</p>
+        <textarea rows="3" v-model="meg"></textarea>
+        <button>meg</button>
+        <form action="demo.html" @submit.prevent="submitForm">
+            <button type="submit">submit</button>
+        </form>
+        <button @click="count +=1">click {{count}}</button>
+        <p>level {{level}}</p>
+        <input type="text" v-model="first">
+        <input type="text" v-model="last">
+        <p>{{username}}</p>
+
+        <ul>
+            <li @click='toggleTasks(task)' :class="{'completed':task.completed}" v-for="task in tasks">{{task.body}}</li>
+        </ul>
+
+        <table>
+            <tr>
+                <th>序号</th>
+                <th>商品名称</th>
+                <th>商品价格</th>
+                <th>购买数量</th>
+                <th>操作</th>
+            </tr>
+            <tr v-for="iphone in IP_Json">
+                <td>{{iphone.id}}</td>
+                <td>{{iphone.name}}</td>
+                <td>{{iphone.price}}</td>
+                <td>
+                    <button @click="iphone.count-=1">-</button>
+                    {{iphone.count}}
+                    <button @click="iphone.count+=1">+</button>
+                </td>
+                <td>
+                    <button @click="iphone.count=0">移除</button>
+                </td>
+            </tr>
+        </table>
+        <p>总价：￥{{totalPrice()}}</p>
+    </div>
+
+</body>
+
+<script src="js/vue.js"></script>
+
+<script>
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                meg: '',
+                count: 0,
+                points: 200,
+                first: 'qian',
+                last: 'xuebing',
+                tasks: [{
+                    body: 'go to the movies',
+                    completed: false
+                }, {
+                    body: 'go to the shop',
+                    completed: false
+                }, {
+                    body: 'learn vue js in action',
+                    completed: true
+                }],
+                IP_Json: [{
+                    id: 1,
+                    name: 'iphone8',
+                    price: 5099,
+                    count: 1
+                }, {
+                    id: 2,
+                    name: 'iphone xs',
+                    price: 8699,
+                    count: 1
+                }, {
+                    id: 3,
+                    name: 'iphone xr',
+                    price: 6499,
+                    count: 1
+                }]
+            }
+        },
+        methods: {
+            submitForm() {
+                alert("submit");
+            },
+            toggleTasks(task) {
+                task.completed = !task.completed
+            },
+            totalPrice() {
+                var totalIP = 0;
+                for (let i = 0; i < this.IP_Json.length; i++) {
+                    totalIP += this.IP_Json[i].count * this.IP_Json[i].price
+                }
+                return totalIP
+            }
+        },
+        computed: {
+            level() {
+                if (this.points < 100) {
+                    return '普通会员'
+                }
+                return 'VIP会员'
+            },
+            username() {
+                return this.first + '' + this.last
+            }
+        }
+    })
+
+
+    for (let i = 0; i < 3; i++) {
+        let i = 'abc';
+        console.log(i);
+
+    }
+    var s = "hello";
+    for (let i = 0; i < s.length; i++) {
+        console.log(s[i]); // h e l l o
+    }
+    console.log(i); //undefined  块级作用域
+    for (var i = 0; i < s.length; i++) {
+        console.log(s[i]);// h e l l o
+    }
+    console.log(i); //5
+    // ES6改变this指向的3种方法：
+    //  1>. let self = this;
+    //  2>. bind()函数
+    //  3>. 箭头函数
+    const team={
+        members:["Herry","Elyse"],
+        teamName:'es6',
+        teamSummary:function(){
+            // let self=this;
+            // return this.members.map(function(member){
+            //     return  `${member}隶属于${self.teamName}小组`
+            // })
+
+
+            // return this.members.map(function(member){
+            //     return  `${member}隶属于${self.teamName}小组`
+            // }.bind(this))
+
+           return this.members.map((member)=>{
+                return  `${member}隶属于${self.teamName}小组`
+            })
+        }
+    }
+    console.log(team.teamSummary()); //  ["Herry隶属于es6小组", "Elyse隶属于es6小组"]
+
+
+
+</script>
+
+</html>

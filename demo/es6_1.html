@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="button" name="" id="" value="按钮0" />
+		<input type="button" name="" id="" value="按钮1" />
+		<input type="button" name="" id="" value="按钮2" />
+		
+		
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<!--<script src="js/browser.js" charset="UTF-8"></script>-->
+		<script >
+/*			ES6(又叫ES2015) （type="text/babel"）
+			一.编译,转换
+				1.在线转换
+				2.提前编译 (babel)
+				babel=browser.js
+			二.ES6
+				1.变量
+				2.函数
+				3.数组
+				4.字符串
+				5.面向对象
+				6.Promise
+				7.generator
+				8.模块化
+			
+*/	
+			
+	
+	
+	
+	
+			
+/*		一.变量 (let  and  const	)
+
+			var 
+			1.可以重复声明
+			2.无法限制修改
+			3.没有块级作用域			
+				{
+					块
+				}
+				
+			let 不能重复声明, 变量--可以修改, 块级作用域
+			const 不能重复声明，常量--不可修改, 块级作用域
+			
+*/						
+			let a=2;
+			 a=5;
+			 alert(a); // 5
+			 
+			 const b=3;
+//			 b=5;
+			 alert(b); // Assignment to constant variable.
+			 
+			 
+			 /*for(var i=0; i < $("input").length; i++){
+			 	$("input").eq(i).click(function(){
+			 		alert(i); // 全是3
+			 	})
+			 }*/
+			for (let i=0; i<$("input").length; i++) {
+				$("input").eq(i).click(function(){
+			 		alert(i); // 依次弹出0,1,2
+			 	})
+			}
+			
+			
+			
+/*
+ 			二.箭头函数：() => {}
+ 				1.如果只有一个参数，()可以省
+ 				2.如果只有一个return,{}可以省
+ * */
+			//没有参数
+			let show=()=>{alert('abc');}
+			show(); // abc
+			
+			//一个参数，一个return
+			let fn=a=>a*2
+			console.log(fn(4)); // 8
+			
+			let arr = [12,43,6,78,1];
+			//两个参数，一个return
+			arr.sort((a,b)=>a-b);
+			alert(arr); // 1,6,12,43,78
+			
+/*
+ 			三.函数-参数
+ 				1.参数扩展/数组展开：
+ 					1>收集剩余的参数，只能放在最后   ...args ，
+ 					2>数组展开：展开后的效果，和直接把数组写在这儿一样
+ 				2.默认参数
+ 						
+
+ * */		
+ 			//收集参数
+			foo(2,3,9,0,7,5);
+			function foo(a,b,...args){
+				console.log(a); // 2
+				console.log(b); // 3
+				console.log(args); // [9,0,7,5]
+			}
+			
+			//数组展开
+			let arrDemo = [0,8,6];			
+			demo(...arrDemo);
+			function demo(a,b,c){
+				console.log(a); // 
+				console.log(b); // 
+				console.log(c); // 
+			}
+			
+			let arr1=[1,2,3];
+			let arr2=[4,5,6];
+			console.log(...arr1,...arr2);
+			
+			//默认参数
+			function mren(a,b=2,c=5){
+				console.log(a,b,c);
+			}
+			mren(0); // 0 2 5
+			
+			
+/*			四.解构赋值：
+ * 				1.左右两边解构必须一样；
+ * 				2.右边必须是个东西；
+ * 				3.声明和赋值不能分开(必须在一句话里完成)；			
+ */
+			let [f,k,z]=[1,2,3];
+			console.log(f,k,z); // 1 2 3
+			
+			let {d,h,g} = {d:0,h:6,g:8};
+			console.log(d,h,g); // 0 6 8
+			 
+		</script> 
+				
+	</body>
+</html>

@@ -1,0 +1,715 @@
+.bd_nav {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+    .bd_nav h2 {
+        font-size: 16px;
+        line-height: 30px;
+        font-weight: 400;
+        font-style: normal;
+        display: inline;
+    }
+
+.btn_css {
+    border: none;
+    background-color: #d9534f;
+    color: white;
+}
+
+.form-control[readonly] {
+    background: #fff;
+    cursor: pointer;
+}
+
+.div-search {
+    padding-right: 90px;
+}
+
+    .div-search .btn {
+        width: 20%;
+        height: 100%;
+        min-width: 70px;
+        display: inline-block;
+        overflow: visible;
+        padding: 0 22px;
+        line-height: 30px;
+        vertical-align: middle;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 3px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        font-size: 14px;
+        border-width: 1px;
+        border-style: solid;
+        cursor: pointer;
+    }
+
+.bd_search {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.search_input_box {
+    border: 1px solid #e7e7eb;
+    display: inline-block;
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    width: 100%;
+    font-size: 14px;
+    padding: 0 10px;
+}
+
+.search_input_append {
+    position: absolute;
+    top: 0;
+    right: 0.8em;
+    width: 30px;
+    text-align: center;
+    font-size: 0;
+    border-left: 1px solid #e7e7eb;
+}
+
+.search_input {
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 22px;
+    line-height: normal;
+    margin: 4px 0;
+    color: #222;
+    overflow: auto;
+    font-family: inherit;
+    font-size: 100%;
+}
+
+table {
+    background-color: transparent;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+
+#div-edit .label-question {
+    padding: 0;
+    font-family: "微软雅黑";
+    font-size: 15px;
+}
+
+#div-edit .button-operation {
+    padding: 0;
+}
+
+.radio-question-type {
+    font-family: "微软雅黑";
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+    .radio-question-type label {
+        font-family: "微软雅黑";
+        font-size: 10px;
+        margin-right: 10px;
+    }
+
+.button-option-add {
+    width: calc(100% - 15px);
+}
+
+.div-option {
+    margin: 10px 0;
+    font-family: "微软雅黑";
+    font-size: 10px;
+    position: relative;
+}
+
+.div-limit, .div-necessary {
+    margin-top: 5px;
+}
+
+    .div-limit label, .div-maxselect label {
+        float: left;
+        line-height: 25px;
+    }
+
+.text-limit {
+    width: 95px;
+    height: 25px;
+    margin-bottom: 10px;
+}
+
+.text-maxselect {
+    width: 95px;
+    height: 25px;
+    margin-bottom: 10px;
+}
+
+#button-add-question {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.btn-sm {
+    /*background-color: #dddddd;*/
+}
+
+.survey_foot {
+    margin-top: 0;
+}
+
+td.activated {
+    background-color: #aaaaaa;
+    color: white;
+}
+
+.mobile {
+    width: 362px;
+    margin: 0 auto;
+    min-height: 494px;
+}
+
+/*预览css--BA Rating*/
+#dreambox16 {
+    width: 100%;
+    position: relative;
+    display: none;
+}
+
+.clarins16_mainer {
+    width: 100%;
+    position: relative;
+}
+
+.clarins16_con {
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    left: 10%;
+    top: 0;
+    z-index: 2;
+}
+
+.question16 {
+    width: 100%;
+    height: 45%;
+    display: inline-block;
+}
+
+    .question16 ul {
+        width: 100%;
+        height: 90%;
+        display: none;
+        margin: 5% 0 0 0;
+    }
+
+    .question16 li {
+        width: 100%;
+        height: 40%;
+        display: inline-block;
+        text-align: center;
+    }
+
+        .question16 li span {
+            width: 16%;
+            display: inline-block;
+            font-size: 16px;
+            margin: 2% 15%;
+        }
+
+    .question16 li {
+        padding: 4% 0 0 0;
+    }
+
+        .question16 li span img {
+            width: 50%;
+            float: left;
+            display: inline-block;
+        }
+
+        .question16 li span em {
+            display: inline-block;
+            float: left;
+            margin: 10% 0 0 10%;
+        }
+
+.clarins16_scores {
+    width: 90%;
+    height: 24%;
+    /*display: inline-block;
+	margin: 24% 0 0 5%;
+	text-align:center;*/
+    position: absolute;
+    left: 5%;
+    bottom: 12%;
+}
+
+    .clarins16_scores ul {
+        width: 100%;
+        height: 56%;
+        display: inline-block;
+    }
+
+    .clarins16_scores li {
+        width: 18%;
+        display: inline-block;
+        height: 40%;
+        margin: 1% 0;
+        background: url("/Content/Images/survey/star.png") no-repeat center;
+        background-size: auto 100%;
+    }
+
+        .clarins16_scores li.hover {
+            background: url("/Content/Images/survey/star_red.png") no-repeat center;
+            background-size: auto 100%;
+        }
+
+.scoresNum {
+    width: 16%;
+    display: inline-block;
+    float: left;
+    margin: 1.6% 0 0 36%;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ca0030;
+    text-align: center;
+}
+
+.submit16_btn {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 3%;
+}
+
+.submit16pup {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 12;
+    display: none;
+}
+
+.submitOk {
+    background: rgba(0,0,0,0.7) url("/Content/Images/survey/submit_ok.png") no-repeat center;
+    background-size: 90% auto;
+}
+
+.submitError {
+    background: rgba(0,0,0,0.7) url("/Content/Images/survey/submit_error.png") no-repeat center;
+    background-size: 90% auto;
+}
+
+.submit16_pupclose {
+    width: 80%;
+    height: 8%;
+    display: inline-block;
+    margin: 86% 0 0 10%;
+}
+
+.qestion_title {
+    width: 100%;
+    display: inline-block;
+    float: left;
+    position: relative;
+    font-family: "微软雅黑";
+}
+
+    .qestion_title img {
+        opacity: 0;
+    }
+
+.qestion_title_con {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: left;
+}
+
+    .qestion_title_con i {
+        width: 8%;
+        float: left;
+        display: inline-block;
+        font-size: 22px;
+        font-family: Arial;
+        color: #bf0f35;
+        font-style: italic;
+    }
+
+    .qestion_title_con p {
+        width: 90%;
+        float: left;
+        display: inline-block;
+        color: #282b30;
+        font-size: 15px;
+        line-height: 18px;
+        margin: 1% 0 0 0;
+    }
+
+.otherTextarea {
+    width: 100%;
+}
+
+    .otherTextarea img {
+        width: 100%;
+        display: inline-block;
+    }
+
+.question16 li.otherTextarea {
+    padding: 0;
+    position: relative;
+}
+
+.otherTextarea textarea {
+    width: 90%;
+    height: 170%;
+    position: absolute;
+    left: 5%;
+    top: 9%;
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: #282b30;
+}
+
+@media handheld and (min-height: 400px), screen and (max-height: 420px) {
+    .scoresNum {
+        margin: 4% 0 0 37%;
+    }
+
+    .submit16pup {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 12;
+        display: none;
+    }
+}
+
+body {
+    background: url("/Content/Images/survey/q16_bg.jpg") repeat-y center;
+    background-size: 100% auto;
+}
+
+
+/*预览css--试用申领*/
+.qtitle_con h1 {
+    width: 90%;
+    font-size: 20px;
+    text-align: left;
+    margin: 8% 0 0 10%;
+    display: inline-block;
+}
+
+.qtitle_con p {
+    font-size: 11px;
+    position: absolute;
+    left: 0;
+    bottom: -120%;
+    color: #282b30;
+    width: 100%;
+    text-align: center;
+}
+
+.qtitle_con {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.qlist_con {
+    width: 72%;
+    display: inline-block;
+    float: left;
+    margin: 0 0 0 13%;
+    height: 100%;
+    position: relative;
+}
+
+#section-q1 .qlist_con {
+    width: 90%;
+    margin: 0 0 0 4%;
+}
+
+#section-q1 .qli {
+    width: 85%;
+    margin: 15% 0 0 5%;
+}
+
+    #section-q1 .qli li {
+        font-size: 13px;
+        position: relative;
+    }
+
+        #section-q1 .qli li h2 {
+            font-size: 16px;
+            padding: 0 0 2px 0;
+        }
+
+.q1c {
+    padding: 12px 0;
+}
+
+.star {
+    width: 10%;
+    height: 100%;
+    background: url("/Content/Images/survey/star.png") left 29% no-repeat;
+    background-size: 78% auto;
+    position: absolute;
+    left: -12%;
+    top: 0;
+    display: none;
+}
+
+    .star.hover {
+        background: url("/Content/Images/survey/star_red.png") left 29% no-repeat;
+        background-size: 78% auto;
+    }
+
+.qlist#section-q1 {
+    top: 10%;
+}
+
+    .qlist#section-q1 .qfooter {
+        margin: 0 0 7% 0;
+    }
+
+.qbtn, .qbtn_2 {
+    padding: 10px 0;
+    width: 60%;
+    padding: 15px 0;
+    background: #be1035;
+    display: inline-block;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+#section-q3 .qli li span {
+    width: 8%;
+}
+
+#section-q4 .qli li span {
+    width: 15%;
+}
+
+.qli li.hover span {
+    display: inline-block;
+}
+
+
+.qfooter {
+    width: 80%;
+    position: relative;
+    text-align: center;
+    margin: 3% auto;
+}
+
+.qbtn_2 {
+    width: 48%;
+    float: right;
+    display: inline-block;
+}
+
+.qfooter a.qbtn_2:nth-child(1) {
+    float: left;
+    background: #707378;
+}
+
+
+#section-q4 .qli li {
+    width: 48%;
+    float: left;
+    display: inline-block;
+}
+
+    #section-q4 .qli li:nth-child(even) {
+        float: right;
+    }
+
+.st_con {
+    width: 90%;
+    margin: 22% 0 0 0;
+    display: inline-block;
+    position: relative;
+}
+
+#article-skintest {
+    display: none;
+    width: 100%;
+    height: 100%;
+    /* background: url(http://cdnhk.clubclarins.cn/Clarins.Wechat.Frontend/Content/Clarins/imgs/testbg.jpg) no-repeat center top; */
+    background: url("/Content/Images/survey/testbg.jpg") no-repeat center top;
+    background-size: 100% 100%;
+    float: left;
+    display: inline-block;
+    text-align: center;
+}
+
+#div-question {
+    background: url("/Content/Images/survey/qbg.png") no-repeat center top;
+    /* background: url(http://cdnhk.clubclarins.cn/Clarins.Wechat.Frontend/Content/Clarins/imgs/qbg.png) no-repeat center top; */
+    background-size: 100% auto;
+    padding-bottom: 20px;
+}
+
+.qlist.hover {
+    display: inline-block;
+}
+
+.qlist {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: relative;
+    left: 0;
+    margin-top: 12%;
+    text-align: center;
+}
+
+.qli {
+    margin: 15% 0 0 5%;
+}
+
+    .qli li {
+        padding: 0;
+        font-size: 15px;
+        border-bottom: 1px #a9aaac solid;
+        text-align: left;
+        line-height: 20px;
+    }
+
+        .qli li.hover span {
+            display: inline-block;
+        }
+
+        .qli li span {
+            width: 10%;
+            position: absolute;
+            top: 0;
+            right: -3%;
+            padding: 12px 0;
+            display: none;
+        }
+
+.qlist_con header {
+    padding: 0 0 8px 0;
+    position: relative;
+    display: block;
+}
+
+.qli, .qli li {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+.checkbox-inline {
+    float: left;
+}
+
+ .radio-group {
+        margin-bottom: 15px;
+    }
+
+        .radio-group label {
+            margin-right: 15px;
+        }
+
+            .radio-group label:last-child {
+                margin-right: 0;
+            }
+
+    .input-group .glyphicon-trash {
+        cursor: pointer;
+    }
+
+    .single-input-group {
+        width: 100%;
+        float: left;
+        margin-bottom: 15px;
+    }
+
+
+    .tab-block.active {
+        display: block;
+    }
+
+    .li_tab_campaign {
+        cursor: pointer;
+    }
+
+    .previewImg {
+        min-height: 62px;
+        position:relative;
+    }
+    .wmm-w {
+        display:inline-block;
+        position:relative;
+        
+    }
+    .previewImg img {
+        height:auto;
+        max-height:51px;
+        max-width:80%;
+    }
+    .previewImg .imgtrash {
+        position:absolute;
+        top:50%;
+        margin-top:-8px;
+        right:0;
+        cursor:pointer;
+    }
+.t1-btn-remove-option {
+    position: absolute;
+    z-index: 9;
+    right: 0px;
+    top: 50%;
+
+    padding: 7px;
+    background: #ccc;
+    cursor: pointer;
+}
+
+
+
+
+
+
+body {
+    font-size: 14px;
+    font-family: "Microsoft YaHei" !important;
+}
+.form-control, .input-group-addon, .modal-content, .btn, .input-group .form-control:last-child, .fixed-table-container, a, input{
+	border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    font-size: 14px;
+}
+
+

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>love</title>
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap-theme.min.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- 兼容IE9以下的版本 -->
+    <!--[if lt IE 9]
+        <script type="text/javascript"  src="Bootstrap/js/html5shiv/html5shiv.min.js"></script>
+        <script type="text/javascript"  src="Bootstrap/js/respond.js"></script>
+    <![endif]>-->
+
+    <style>
+        .box {
+            width: 50%;
+            margin: 50px auto;
+            /* border: 1px solid #ddd; */
+        }
+        
+        span {
+            display: inline-block;
+            margin-right: 10px;
+            color: red;
+            font-size: 20px;
+        }
+        
+        span:last-child {
+            margin-right: 0;
+        }
+        
+        .demo {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px auto;
+            width: 500px;
+            display: table;
+            background: #ccc;
+            padding: 10px;
+        }
+        
+        .left {
+            width: 95%;
+            height: 80px;
+        }
+        
+        .left p {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .demo .img-box {
+            width: 30%;
+            display: table-cell;
+            vertical-align: middle;
+            height: 80px;
+            overflow: hidden;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        
+        .demo .img-box img {
+            max-width: 100%;
+            max-height: 100%;
+            vertical-align: middle;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box">
+        <span class="glyphicon glyphicon-heart"></span>
+        <span class="glyphicon glyphicon-heart"></span>
+        <span class="glyphicon glyphicon-heart"></span>
+        <span class="glyphicon glyphicon-heart"></span>
+        <span class="glyphicon glyphicon-heart"></span>
+        <span class="glyphicon glyphicon-heart"></span>
+        <span class="glyphicon glyphicon-heart"></span>
+        <span class="glyphicon glyphicon-heart"></span>
+        <span class="glyphicon glyphicon-heart"></span>
+        <span class="glyphicon glyphicon-heart"></span>
+        <span class="glyphicon glyphicon-heart"></span>
+        <span class="glyphicon glyphicon-heart"></span>
+        <span class="glyphicon glyphicon-heart"></span>
+    </div>
+
+    <div class="demo">
+        <div class="left">
+            <p>每次刷牙都出血？你更应该好好刷牙了每次刷牙都出血？你更应该好好刷牙了每次刷牙都出血？你更应该好好刷牙了</p>
+        </div>
+        <div class="img-box">
+            <img src="Images/shaver_02.png" alt="">
+        </div>
+    </div>
+    <div class="demo">
+        <div class="left">
+            <p>每次刷牙都出血？你更应该好好刷牙了每次刷牙都出血？你更应该好好刷牙了每次刷牙都出血？你更应该好好刷牙了</p>
+        </div>
+        <div class="img-box">
+            <img src="Images/cleaner.png" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

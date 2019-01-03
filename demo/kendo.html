@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <base href="https://demos.telerik.com/kendo-ui/grid/multicolumnheaders"> -->
+    <style>
+        html {
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <title></title>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.2.620/styles/kendo.common-material.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.2.620/styles/kendo.material.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.2.620/styles/kendo.material.mobile.min.css" />
+
+    <script src="https://kendo.cdn.telerik.com/2018.2.620/js/jquery.min.js"></script>
+    <!-- <script src="https://kendo.cdn.telerik.com/2018.2.620/js/kendo.all.min.js"></script> -->
+    <script src="js/kendo.all.min.js"></script>
+
+
+</head>
+
+<body>
+    <div id="grid-wrap">
+        <div id="grid"></div>
+
+        <script>
+            $(document).ready(function() {
+                var products = [{
+                    ProductName: 'apple',
+                    SKU: 'sku01',
+                    Receive: 20,
+                    Order: 30,
+                    Damaged: 10,
+                    Check: 30,
+                    ReportLoss: 10
+                }, {
+                    ProductName: 'banana',
+                    SKU: 'sku02',
+                    Receive: 20,
+                    Order: 30,
+                    Damaged: 10,
+                    Check: 30,
+                    ReportLoss: 10
+                }, {
+                    ProductName: 'watermelon',
+                    SKU: 'sku03',
+                    Receive: 20,
+                    Order: 30,
+                    Damaged: 10,
+                    Check: 30,
+                    ReportLoss: 10
+                }]
+                $("#grid").kendoGrid({
+                    // dataSource: {
+                    //     type: "odata",
+                    //     transport: {
+                    //         read: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Customers"
+                    //     },
+                    //     pageSize: 20
+                    // },
+                    dataSource: products,
+                    minHeight: 150,
+                    groupable: true,
+                    sortable: true,
+                    resizable: true,
+                    reorderable: true,
+                    pageable: true,
+                    columnMenu: true,
+                    columns: [{
+                        field: "ProductName",
+                        title: "商品名称",
+                        width: 120,
+                        headerAttributes: {
+                            "class": "table-header-cell",
+                            style: "text-align: center;vertical-align: middle"
+                        }
+
+                    }, {
+                        field: "SKU",
+                        title: "商品SKU",
+                        width: 120,
+                        headerAttributes: {
+                            "class": "table-header-cell",
+                            style: "text-align: center;vertical-align: middle"
+                        }
+
+                    }, {
+                        title: "机组1",
+                        // width: 360,
+                        headerAttributes: {
+                            "class": "table-header-cell",
+                            style: "text-align: center;vertical-align: middle"
+                        },
+                        columns: [{
+                            field: "Receive",
+                            title: "收货",
+                            width: 120,
+                            headerAttributes: {
+                                "class": "table-header-cell",
+                                style: "text-align: center;vertical-align: middle"
+                            }
+
+                        }, {
+                            field: "Order",
+                            title: "订单",
+                            width: 120,
+                            headerAttributes: {
+                                "class": "table-header-cell",
+                                style: "text-align: center;vertical-align: middle"
+                            },
+                        }, {
+                            field: "Damaged",
+                            title: "破损",
+                            width: 120,
+                            headerAttributes: {
+                                "class": "table-header-cell",
+                                style: "text-align: center;vertical-align: middle"
+                            },
+                        }]
+                    }, {
+                        title: "机组2",
+                        headerAttributes: {
+                            "class": "table-header-cell",
+                            style: "text-align: center;vertical-align: middle"
+                        },
+                        columns: [{
+                            field: "Receive",
+                            title: "收货",
+                            width: 120,
+                            headerAttributes: {
+                                "class": "table-header-cell",
+                                style: "text-align: center;vertical-align: middle"
+                            }
+
+                        }, {
+                            field: "Order",
+                            title: "订单",
+                            width: 120,
+                            headerAttributes: {
+                                "class": "table-header-cell",
+                                style: "text-align: center;vertical-align: middle"
+                            },
+                        }, {
+                            field: "Damaged",
+                            title: "破损",
+                            width: 120,
+                            headerAttributes: {
+                                "class": "table-header-cell",
+                                style: "text-align: center;vertical-align: middle"
+                            },
+                        }]
+                    }, {
+                        title: "航后清点",
+                        headerAttributes: {
+                            "class": "table-header-cell",
+                            style: "text-align: center;vertical-align: middle"
+                        },
+                        columns: [{
+                            field: "Check",
+                            title: "清点",
+                            width: 120,
+                            // attributes: {
+                            //     "class": "table-cell",
+                            //     style: "text-align: center;vertical-align: middle"
+                            // }
+                            headerAttributes: {
+                                "class": "table-header-cell",
+                                style: "text-align: center;vertical-align: middle"
+                            }
+
+                        }, {
+                            field: "ReportLoss",
+                            title: "报损",
+                            width: 120,
+                            headerAttributes: {
+                                "class": "table-header-cell",
+                                style: "text-align: center;vertical-align: middle"
+                            },
+                        }]
+                    }]
+                });
+            });
+        </script>
+    </div>
+
+
+</body>
+
+</html>

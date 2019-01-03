@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>采购单</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-size: 14px;
+      font-family: '宋体';
+    }
+    .weight{
+      font-weight: 700;
+    }
+    .indent{
+      text-indent: 2em;
+    }
+    ul li{
+      list-style: none;
+    }
+    .clearfix{
+      display: block;
+      content: '';
+      clear: both;
+      overflow: hidden;
+    }
+    body{
+      background-color: #fff;
+    }
+
+    .container {
+      width: 700px;
+      /*border: 1px solid #ddd;*/
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .header,.top{
+      display: flex;
+      display: -webkit-flex;
+      display: -moz-flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+    .header ul{
+      flex: 1;
+    }
+    .header ul li{
+      color: #666;
+      height: 30px;
+      line-height: 30px;
+    }
+    .logo{
+      width: 50%;
+      margin-top: 70px;
+    }
+    .logo img{
+      width: 100%;
+    }
+    .top{
+      margin:30px;
+      width: 100%;
+    }
+    .top h1{
+      font-size: 40px;
+    }
+    .purchasing-information{
+      width: 100%;
+    }
+    .purchasing-information li{
+      padding: 0 10px;
+      border-bottom: 1px solid #333;
+      display: -moz-flex;
+      display: -webkit-flex;
+      display: flex;
+
+    }
+    .purchasing-information li label{
+      flex: 1;
+      height: 40px;
+      line-height: 40px;
+      vertical-align: bottom;
+    }
+    .purchasing-information li label span{
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .tip{
+      margin: 20px 0;
+      text-indent: 2em;
+      letter-spacing: 2px;
+      line-height: 30px;
+      font-size: 16px;
+     }
+    .table{
+      margin-bottom: 20px;
+    }
+    .table tr>td,.table tr>th{
+      min-width: 10%;
+      min-height: 30px;
+      padding: 10px 0;
+      text-align: center;
+    }
+    .explain>p{
+      line-height: 40px;
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
+    .invoice-infor li{
+      line-height: 40px;
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
+    .inscription>div{
+      float: right;
+      margin-right: 50px;
+      margin-top: 50px;
+    }
+    .inscription p{
+      line-height: 30px;
+      text-align: center;
+      letter-spacing: 2px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <ul>
+      <li>中国联合航空有限公司</li>
+      <li class="weight">北京丰台区警备东路6号西区一号院</li>
+      <li>邮编: 100076 电话:010-87106232</li>
+      <li>传真:010-67973529 邮箱：liulu@ceair.com</li>
+    </ul>
+    <div class="logo"><img src="Images/logo.jpg" alt=""></div>
+  </div>
+  <div class="top">
+    <h1>采购传真</h1>
+    <label class="weight">
+      <span>采购编号：</span>
+      <span>123455</span>
+    </label>
+  </div>
+  <ul class="purchasing-information">
+    <li>
+      <label>
+        <span>收件人：</span>
+        <span>张三</span>
+      </label>
+      <label>
+        <span>发 件 人：</span>
+       <span>中联航电商部</span>
+      </label>
+    </li>
+    <li>
+      <label>
+        <span>电&nbsp;话：</span>
+        <span></span>
+      </label>
+    </li>
+    <li>
+      <label>
+        <span>传&nbsp;真：</span>
+        <span></span>
+      </label>
+      <label>
+        <span>签字回传：</span>
+        <span></span>
+      </label>
+    </li>
+    <li>
+      <label>
+        <span>关&nbsp;于：</span>
+        <span>采购通知</span>
+      </label>
+      <label>
+        <span>日&nbsp;&nbsp;期：</span>
+        <span></span>
+      </label>
+    </li>
+  </ul>
+  <p class="tip">我公司现需要以下货物，请按所需货物品名,数量及到货日期及时安排发货。如有特殊情况，请及时通知。</p>
+  <table class="table" border="1" cellpadding="0" cellspacing="0"  width="100%">
+    <tr>
+      <th>品名</th>
+      <th>单位</th>
+      <th>数量</th>
+      <th>单价（含税）</th>
+      <th>金额</th>
+      <th>最晚到货日期</th>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="2">总金额</td>
+      <td colspan="4"></td>
+    </tr>
+    <tr>
+      <td colspan="2">备注</td>
+      <td colspan="4"></td>
+    </tr>
+  </table>
+  <div class="explain">
+    <p>一、提供的产品有效期必须是在标明的有效期到期前的1/2期限之内。</p>
+    <p>二、贵公司在收到采购单后填写最晚到货日期并确认单价和金额无误，签字<b>回传我部进行确认</b>。</p>
+    <p>三、贵公司送货时请务必携带盖有贵公司公章的专用送货单或出库单，及此批次产品的有效质检报告（复印件即可）。</p>
+    <p>四、收货地址及联系人:北京丰台区南苑机场食品厂库房</p>
+    <p class="indent">联系人:刘女士  电话：010-87106373/2    传真：010-67973529</p>
+    <p>五、请严格按此要货通知上所需数量发货，销售发票上的数量必须与要货通知上的数量相符，否则我公司财务不予结算
+    </p>
+    <p>六、开票结算信息为:</p>
+    <ul class="invoice-infor">
+      <li>名称：中国联合航空有限公司</li>
+      <li>纳税人识别号：91110000100002345W</li>
+      <li>地址 、 电话:北京市丰台区警备东路6号西区一号院   01067978899</li>
+      <li>开   户  行：中国建设银行北京长安支行</li>
+      <li>银 行 账 号：11001028100059000001</li>
+      <li>发票请寄往：北京、丰台区、警备东路6号西区一号院 </li>
+      <li>财务联系人:马双双</li>
+      <li>联系电话：010-87106231/15810199187</li>
+      <li> 传真：010-67973529</li>
+    </ul>
+    <div class="inscription clearfix">
+      <div>
+        <p>中国联合航空有限公司</p>
+        <p>电子商务部</p>
+        <p>2019年1月2日</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

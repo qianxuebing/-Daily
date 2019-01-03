@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>导航</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.navbox{
+				width: 80%;
+				height: 40px;
+				line-height: 40px;
+				margin: 20px auto;
+				background-color: #09f;
+			}
+			.navbox nav{
+				height: 100%;
+				width: 100%;
+				background-color: #333;
+			}
+			.navbox nav ul{
+				width: 100%;
+				/*height: 40px;*/
+				display: flex;
+				display: -webkit-flex;
+
+			}
+			nav ul li{				
+				flex: 1;
+				text-align: center;
+				color: #fff;
+				list-style: none;
+				cursor: pointer;
+				-webkit-transition: all 0.2s linear;
+				-moz-transition: all 0.2s linear;
+				-ms-transition: all 0.2s linear;
+				-o-transition: all 0.2s linear;				
+				transition: all 0.2s linear;
+			}
+			nav ul li:hover{
+				background-color: dodgerblue;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="navbox">
+			<nav><ul></ul></nav>
+		</div>
+
+
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				
+				var data = ["首页",'家园','社区','商城','资源','视频','工具'];				
+				var html ="";	 
+				for(var i=0; i<data.length; i++){
+					html=`<li>${data[i]}</li>`
+					$("nav ul").append(html);
+				}
+				$("nav ul li").eq(0).css('background','dodgerblue');
+				
+			})
+		</script>
+		
+	</body>
+</html>

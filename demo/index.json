@@ -1,0 +1,19 @@
+{
+    "information": [{
+            "name": "xiaohong",
+            "age": 12,
+            "sex": "girl"
+        },
+        {
+            "name": "xiaofang",
+            "age": 16,
+            "sex": "girl"
+        },
+        {
+            "name": "xiaogang",
+            "age": 14,
+            "sex": "boy"
+        }
+
+    ]
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+
+    <style>
+        .content-wrap {
+            margin-top: 20px;
+            display: flex;
+            display: -webkit-flex;
+            flex-wrap: wrap;
+        }
+        
+        .content-wrap label {
+            width: 10%;
+            display: flex;
+            display: -webkit-flex;
+            display: -moz-flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        label input[type=checkbox] {
+            width: 15px;
+            height: 15px;
+            overflow: hidden;
+            background: #fff;
+            appearance: none;
+            -webkit-appearance: none;
+            border: 1px solid #808080;
+            outline: none;
+            margin-right: 5px;
+            margin-top: 0;
+        }
+        
+        input[type=checkbox]:checked {
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url(./Images/btn-blue_03.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            border-radius: 4px;
+            border: 0;
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="content-wrap">
+            <label>
+                <input type="checkbox" name="type" checked>
+                <span>one</span>
+            </label>
+            <label>
+                <input type="checkbox" name="type">
+                <span>two</span>
+            </label>
+            <label>
+                <input type="checkbox" name="type">
+                <span>three</span>
+            </label>
+            <label>
+                <input type="checkbox" name="type">
+                <span>four</span>
+            </label>
+            <label>
+                <input type="checkbox" name="type">
+                <span>five</span>
+            </label>
+            <label>
+                <input type="checkbox" name="type">
+                <span>six</span>
+            </label>
+        </div>
+    </div>
+</body>
+
+</html>

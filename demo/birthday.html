@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Page Title</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="Iconfont/iconfont.css">
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/birthday.js"></script>
+
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.wrapper {
+				width: 90%;
+				margin: 0 auto;
+				border: 1px solid #b2b2b2;
+				padding: 10px;
+				display: flex;
+				overflow: hidden;
+				box-sizing: border-box;
+				color: #989697;
+				margin-top: 10px;
+			}
+			
+			select {
+				width: 100%;
+				border: none;
+				outline: none;
+				appearance: none;
+				-webkit-appearance: none;
+				color: #989697;
+				padding: 0 5px;
+				height: 100%;
+			}
+			
+			.wrapper div {
+				width: 30%;
+				position: relative;
+				margin-left: 10px;
+			}
+			
+			.wrapper div span {
+				position: absolute;
+				right: 5px;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			
+			.iconfont {
+				font-size: 20px;
+				font-weight: bold;
+			}
+			
+			.sex-option {
+				width: 100% !important;
+				position: relative;
+				margin-left: 10px;
+			}
+			
+			.sex-option span {
+				position: absolute;
+				right: 0;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			
+			.sex-option select {
+				width: 100% !important;
+			}
+			
+			.user-input,
+			.user-input input {
+				width: 100%;
+			}
+			
+			.user-input input {
+				border: none;
+				outline: none;
+				/* color: #989697; */
+			}
+			
+			.submit {
+				display: block;
+				margin: 20px auto;
+				width: 90%;
+				height: 40px;
+				outline: none;
+				border: none;
+				background: #83d0e8;
+				color: #fff;
+				font-size: 16px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<span class="iconfont icon-shoujihao" id="telphone"></span>
+			<div class="user-input">
+				<input type="tel" name="telphone" id="" value="" placeholder="手机号">
+			</div>
+		</div>
+		<div class="wrapper">
+			<span class="iconfont icon-user" id="user"></span>
+			<div class="user-input">
+				<input type="text" name="user" id="" value="" placeholder="姓名">
+			</div>
+		</div>
+		<div class="wrapper">
+			<span class="iconfont icon-shengriliwu" id="birthday"></span>
+			<div class="year">
+				<span class="iconfont icon-xialajiantou"></span>
+				<select id="date-sel-year" rel="2015"></select>
+			</div>
+			<div class="month">
+				<span class="iconfont icon-xialajiantou"></span>
+				<select id="date-sel-month" rel="9"></select>
+			</div>
+			<div class="day">
+				<span class="iconfont icon-xialajiantou"></span>
+				<select id="date-sel-day" rel="10"></select>
+			</div>
+		</div>
+
+		<div class="wrapper">
+			<span class="iconfont icon-xingbie" id="sex"></span>
+			<div class="sex-option">
+				<span class="iconfont icon-xialajiantou"></span>
+				<select>
+					<option value="0">MALE</option>
+					<option value="1">FEMALE</option>
+					<option value="2">未知</option>
+				</select>
+			</div>
+		</div>
+
+		<button class="submit">提交</button>
+
+	</body>
+	<script>
+		$(function() {
+			$.date_picker({
+				YearSelector: "#date-sel-year",
+				MonthSelector: "#date-sel-month",
+				DaySelector: "#date-sel-day"
+			});
+			// $.ms_DatePicker();
+
+		})
+	</script>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<style type="text/css">
+		/*无图片时去掉边框*/
+		img[src=""],
+		img:not([src]) {
+			opacity: 0;
+		}
+
+		#demo {
+			display: flex;
+		}
+
+		#demo img {
+			display: inline-block;
+			height: auto;
+			width: 25%;
+		}
+
+		#color {
+			width: 200px;
+			height: 60px;
+			margin-top: 30px;
+		}
+
+		.image-bg {
+			background: #e1e1e1;
+		}
+
+		.image-bg img {
+			width: 100%;
+			opacity: 0;
+			transition: opacity .2s ease-in .25s;
+
+		}
+
+		.loaded img {
+			opacity: 1;
+		}
+	</style>
+</head>
+
+<body>
+
+
+	<div id="demo">
+		<img src="Images/blower.png" />
+		<img src="" />
+		<img src="Images/cleaner.png" />
+		<img src="" />
+	</div>
+	<input type="color" name="color" id="color" />
+	<div class="post">  
+		<div class="image-bg" style="background-color:#141646">
+		  <img width="310" height="242" src="Images/card.jpg"/>
+		</div>
+		<p class="title">Mars</p>
+	  </div>  
+
+
+
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$("#color").change(() => {
+				$('body').css('background', $("#color").val());
+			});
+			$('.post img').each(function () {
+				var el = this;
+				var image = new Image();
+				image.src = el.src;
+
+				image.onload = function () {
+					$(el).parent().addClass('loaded');
+				}
+			})
+		})
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+.container {
+    margin-top: 20px;
+    .panel-body {
+        padding: 0;
+        .list-group {
+            margin-bottom: 0;
+            .list-group-item {
+                word-break: break-all;
+            }
+        }
+    }
+}

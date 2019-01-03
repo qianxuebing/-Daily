@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .ball{
+        width: 20px;
+        height: 20px;
+        background-color: blue;
+        border-radius: 50%;
+        position: relative;
+        top: 0;
+        left: 50%;
+        margin-left: -10px;
+    }
+    </style>
+</head>
+<div class="ball"></div>
+<button class="btn">click</button>
+<body>
+</body>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+//     var top = $(window).height()-50;
+// $(".ball").animate({top:top},6000);
+
+$(".btn").click(function(){
+    var a = 0;
+    var time=setInterval(function(){
+        a++;
+        $(".ball").css('top',a);  
+        if(a>400){
+            a = 0           
+        }
+    },10);   
+})
+
+})
+
+</script>
+</html>

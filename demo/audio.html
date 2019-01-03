@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="Iconfont/iconfont.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-height: 1.2rem;
+        word-break: break-all;
+        margin-bottom: 0.5rem;
+      }
+      time{
+          color:#ddd;
+      }
+      dl {
+        list-style: none;
+        padding: 0 1rem;
+      }
+      dl dt,
+      dl dd {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #eceece;
+        font-size: 1rem;
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+      /* dl dd:last-child{
+        border-bottom: 0;
+    } */
+      .left {
+        width: 70%;
+      }
+      .right{
+          width:4rem;
+          height: 4rem;
+          background-color: #eee;
+          position: relative;
+          cursor: pointer;
+      }
+      .right span{
+          position: absolute;
+          font-size: 2rem;
+          top:50%;
+          left:50%;
+          transform: translate(-50%,-50%);
+          -webkit-transform: translate(-50%,-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <dl>
+      <dt>声音</dt>
+      <dd>
+        <div class="left">
+          <p>
+            跟风买不好挑跟风买不好挑跟风买不好挑跟风买不好挑跟风买不好挑跟风买不好挑跟风买不好挑跟风买不好挑跟风买不好挑
+          </p>
+          <time>2018-12-07</time>
+        </div>
+        <div class="right">
+          <audio class="audio-wrap">
+            <source
+              src="http://www.runoob.com/try/demo_source/horse.ogg"
+              type="audio/mpeg"
+            />
+            您的浏览器不支持 audio 元素。
+          </audio>
+          <span class="iconfont icon-kaishi"></span>
+        </div>
+      </dd>
+      <dd>
+        <div class="left">
+          <p>12343859-8988u899-8i9jhvjlnjjbnsjnnbjxnvnmnnjlnnjn</p>
+          <time>2018-12-07</time>
+        </div>
+        <div class="right">
+          <audio class="audio-wrap">
+            <source
+              src="http://www.runoob.com/try/demo_source/horse.ogg"
+              type="audio/mpeg"
+            />
+            您的浏览器不支持 audio 元素。
+          </audio>
+          <span class="iconfont icon-kaishi"></span>
+        </div>
+      </dd>
+      <dd>
+            <div class="left">
+              <p>
+                跟风买不好挑跟风买不好挑跟风买不好挑跟风买不好挑跟风买不好挑跟风买不好挑跟风买不好挑跟风买不好挑跟风买不好挑
+              </p>
+              <time>2018-12-07</time>
+            </div>
+            <div class="right">
+              <audio class="audio-wrap">
+                <source
+                  src="http://www.runoob.com/try/demo_source/horse.ogg"
+                  type="audio/mpeg"
+                />
+                您的浏览器不支持 audio 元素。
+              </audio>
+              <span class="iconfont icon-kaishi"></span>
+            </div>
+          </dd>
+          <dd>
+            <div class="left">
+              <p>12343859-8988u899-8i9jhvjlnjjbnsjnnbjxnvnmnnjlnnjn</p>
+              <time>2018-12-07</time>
+            </div>
+            <div class="right">
+              <audio class="audio-wrap">
+                <source
+                  src="http://www.runoob.com/try/demo_source/horse.ogg"
+                  type="audio/mpeg"
+                />
+                您的浏览器不支持 audio 元素。
+              </audio>
+              <span class="iconfont icon-kaishi"></span>
+            </div>
+          </dd>
+    </dl>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/rem.js"></script>
+    <script>
+    $(function(){
+        $(document).on("click",".right",function(){
+            var audio = $(this).children("audio").get(0);
+            // 改变暂停播放 icon
+            if(audio.paused){
+                audio.play();
+                $(this).children("span").removeClass("icon-kaishi").addClass("icon-zanting");
+                var audios = $(this).parent().siblings("dd").find("audio");
+                $.each(audios,function(i,item){
+                    item.pause();
+                    $(item).next().removeClass("icon-zanting").addClass("icon-kaishi");
+                })
+            }else{
+                audio.pause();
+                $(this).children("span").removeClass("icon-zanting").addClass("icon-kaishi");
+            }
+            $(this).find("audio").bind("ended",function(){
+                $(this).next().removeClass("icon-zanting").addClass("icon-kaishi");
+            })
+        })
+
+
+
+
+    })
+    </script>
+  </body>
+</html>

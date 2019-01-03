@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lazyLoad</title>
+    <style>
+        #container {
+            width: 640px;
+            height: auto;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <img class="lazy" src="Images/grey.gif" data-original="Images/viper_1.jpg" width="640" heigh="480">
+        <img class="lazy" src="Images/grey.gif" data-original="Images/bmw_m1_hood.jpg" width="640" heigh="480">
+        <img class="lazy" src="Images/grey.gif" data-original="Images/bmw_m1_side.jpg" width="640" heigh="480">
+        <img class="lazy" src="Images/grey.gif" data-original="Images/bmw_m3_gt.jpg" width="640" heigh="480">
+        <img class="lazy" src="Images/grey.gif" data-original="Images/corvette_pitstop.jpg" width="640" heigh="480">
+        <img class="lazy" src="Images/grey.gif" data-original="Images/coverbg.jpg" width="640" heigh="480">
+    </div>
+
+
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/lazyLoad/jquery.lazyload.min.js"></script>
+<script>
+    $('img.lazy').lazyload({
+        container: '#container',
+        event: 'scroll',
+        effect: 'fadeIn'
+    });
+</script>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+
+    <style type="text/css">
+        .answer-text {
+            /* float: left; */
+            width: 80%;
+            margin: 10px 10%;
+        }
+        
+        .wx-tag {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .wx-tag-item {
+            display: flex;
+            /* width: 120px; */
+            /* height: 1.8rem; */
+            /* flex: 1.8rem 0 0; */
+            margin: 0.1rem;
+            justify-content: center;
+            align-items: center;
+            /* text-align: center;
+            vertical-align: middle; */
+            font-size: 14px;
+            background: #98ceff;
+            /* padding: 5px 20px; */
+            color: #fff;
+            border-radius: 50%;
+            box-sizing: border-box;
+            border: 1px solid #cae5ff;
+            /* line-height: 1.8rem;*/
+            text-align: center;
+            max-width: 120px;
+            max-height: 120px;
+            word-break: break-all;
+            margin-left: 0;
+        }
+        /* .wx-tag-item {
+            display: inline-block;
+            max-width: 120px;
+            max-height: 120px;
+            background: #98ceff;
+            padding: 0 10px;
+            border-radius: 50%;
+            overflow: hidden;
+            vertical-align: middle;
+            margin-bottom: 10px;
+            text-align: center;
+        } */
+        
+        .wx-tag-item span {
+            color: #fff;
+            word-break: break-all;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="answer-text wx-tag">
+        <span class="wx-tag-item">
+			<span>一家一家一家一家一家一家一家一家一家一家一家一家一家一家一家</span>
+        </span>
+        <span class="wx-tag-item active">
+			<span>G3</span>
+        </span>
+        <span class="wx-tag-item">
+			<span>G4G4G4G4G4G4G4G4G4G4G4G4G4G4G4</span>
+        </span>
+        <span class="wx-tag-item">
+			<span>G2</span>
+        </span>
+        <span class="wx-tag-item active">
+			<span>G3</span>
+        </span>
+        <span class="wx-tag-item">
+			<span>G4</span>
+        </span>
+        <span class="wx-tag-item">
+			<span>G2</span>
+        </span>
+        <span class="wx-tag-item active">
+			<span>G3</span>
+        </span>
+        <span class="wx-tag-item">
+			<span>G4</span>
+        </span>
+        <span class="wx-tag-item">
+			<span>G2</span>
+        </span>
+        <span class="wx-tag-item active">
+			<span>G3</span>
+        </span>
+        <span class="wx-tag-item">
+			<span>G4</span>
+        </span>
+    </div>
+
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        // initTagCss();
+
+        // function initTagCss() {
+        for (let i = 0; i < $(".wx-tag-item").length; i++) {
+            var $left = parseInt(Math.random() * 50) + 'px';
+            var $w = $(".wx-tag-item").eq(i).width();
+
+            $(".wx-tag-item").eq(i).css('margin-left', $left);
+            $(".wx-tag-item").eq(i).height($w);
+            // var  str  = $('.wx-tag-item span').eq(i).text();
+            // var s = str;
+            // if (str.length > 10) {
+            //     s = str.substring(0, 10) + "...";
+            // }
+            // $('.wx-tag-item span').eq(i).text(s);
+            // console.log($('.wx-tag-item span').text().length);
+        }
+
+
+        // }
+    </script>
+</body>
+
+</html>

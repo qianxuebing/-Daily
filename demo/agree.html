@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="Iconfont/iconfont.css">
+
+    <style>
+        .box {
+            margin: 50px auto;
+            width: 400px;
+        }
+        
+        .item {
+            padding: 11px 10px 0 0;
+            cursor: pointer;
+            height: 35px;
+            display: block;
+            width: 24px;
+            float: left;
+        }
+        
+        .item i {
+            height: 16px;
+            width: 16px;
+            border: 1px solid #176492;
+            display: inline-block;
+            border-radius: 8px;
+            color: #176492;
+        }
+        
+        .word {
+            display: block;
+            float: left;
+            padding-top: 11px;
+            color: #176492;
+        }
+        
+        .checked i {
+            border: 0;
+        }
+        
+        .icon-sousuo {
+            color: #176497;
+            font-size: 20px;
+        }
+        
+        h2 {
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .search-block {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: lightgreen;
+            display: none;
+        }
+        
+        .search-item {
+            width: 90%;
+            margin: 20px auto 0;
+            position: relative;
+        }
+        
+        .search-input {
+            border: 0;
+            outline: 0;
+            width: 100%;
+            height: 20px;
+            border-radius: 20px;
+            padding: 10px;
+        }
+        
+        .btn-search {
+            position: absolute;
+            top: 10px;
+            right: 0;
+            height: 20px;
+            line-height: 20px;
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h2>
+            <span>我的订单</span>
+            <span class="btnsearch">
+                <i class="iconfont icon-sousuo"></i>
+            </span>
+        </h2>
+    </header>
+    <div class="box">
+        <span class="item">
+            <i class="iconfont"></i>
+        </span>
+        <span class="word">我同意接受来自飞利浦的资讯</span>
+    </div>
+
+    <div class="search-block">
+        <div class="search-item">
+            <input type="text" class="search-input" placeholder="订单号/商品名称">
+            <span class="btn-search">
+                <i class="iconfont icon-sousuo"></i>
+            </span>
+        </div>
+    </div>
+
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+    $(function() {
+        // $("body").on("click", ".item", function() {
+        //     $(this).find('i').toggleClass('icon-duigou');
+        // });
+        $("body").on("click", ".box", function() {
+            $(this).find('.item').toggleClass('checked');
+            $(this).find('i').toggleClass('icon-duigou');
+        });
+
+
+        $("body").on("click", ".btnsearch", function() {
+            $(".search-block").show();
+        });
+
+        $("body").on("click", ".btn-search", function() {
+            $(".search-block").hide();
+        });
+
+    })
+</script>
+
+</html>

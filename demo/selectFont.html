@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="Bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="Bootstrap/css/bootstrap-theme.min.css" />
+</head>
+
+<body>
+
+    <div class="col-md-2" style="float: none; margin: 20px auto;">
+        <select class="form-control" id="select-font-size"></select>
+    </div>
+
+    <p style="width: 600px;margin: 0 auto;text-align: center">看我变化哦！</p>
+
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var fontSize = ['12px', '14px', '16px', '18px', '20px', '24px', '36px'];
+            for (let i = 0; i < fontSize.length; i++) {
+                // ES6字符串模板
+                var Html = `<option>${fontSize[i]}</option>`
+                $("#select-font-size").append(Html);
+                $("#select-font-size option").eq(i).css('font-size', fontSize[i]);
+            }
+            // ES6箭头函数
+            $('body').on("change", "#select-font-size", () => {
+                var fontCss = $("#select-font-size").find('option:selected').css('font-size');
+                $("p").css('font-size', fontCss);
+            })
+        })
+    </script>
+
+</body>
+
+</html>

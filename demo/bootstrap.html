@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap-theme.min.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+    <!-- 兼容IE9以下的版本 -->
+    <!--[if lt IE 9]
+        <script type="text/javascript"  src="Bootstrap/js/html5shiv/html5shiv.min.js"></script>
+        <script type="text/javascript"  src="Bootstrap/js/respond.js"></script>
+    <![endif]>-->
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- 栅格系统 -->
+        <div class="row">
+            <div class="bg-info col-md-3 col-sm-6">A</div>
+            <div class="bg-danger col-md-3 col-sm-6">B</div>
+            <div class="bg-warning col-md-3 col-sm-6">C</div>
+            <div class="bg-primary col-md-3 col-sm-6">D</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 bg-info">左</div>
+            <div class="col-md-4 col-md-offset-4 bg-success">右col-md-offset-4</div>
+        </div>
+        <div class="row">
+            <div class="col-md-9 col-md-push-3 bg-warning">one col-md-push-3</div>
+            <div class="col-md-3 col-md-pull-9 bg-success">two col-md-pull-9</div>
+        </div>
+        <div class="show bg-info">显示</div>
+        <div class="hidden">隐藏</div>
+        <div class="visible-xs-block">超小屏幕显示</div>
+        <div class="hidden-xs-block bg-danger">超小屏幕隐藏</div>
+        <!-- 字体图标 -->
+        <span class="glyphicon glyphicon-heart" style="color: red;font-size: 20px;"></span>
+        <span class="glyphicon glyphicon-heart" style="color: red;font-size: 20px;"></span>
+        <span class="glyphicon glyphicon-heart" style="color: red;font-size: 20px;"></span>
+        <span class="glyphicon glyphicon-heart" style="color: red;font-size: 20px;"></span>
+        <span class="glyphicon glyphicon-heart" style="color: red;font-size: 20px;"></span>
+        <span class="glyphicon glyphicon-star" style="color: yellow;font-size: 20px;"></span>
+        <span class="glyphicon glyphicon-star" style="color: yellow;font-size: 20px;"></span>
+        <span class="glyphicon glyphicon-star" style="color: yellow;font-size: 20px;"></span>
+        <span class="glyphicon glyphicon-star" style="color: yellow;font-size: 20px;"></span>
+        <span class="glyphicon glyphicon-star" style="color: yellow;font-size: 20px;"></span>
+        <div class="btn-group">
+            <button type="button" class="btn btn-lg btn-default">请选择</button>
+            <button type="button" class="btn btn-lg btn-default dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="#">Action</a>
+                </li>
+                <li>
+                    <a href="#">Another action</a>
+                </li>
+                <li>
+                    <a href="#">Something else here</a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                    <a href="#">Separated link</a>
+                </li>
+            </ul>
+        </div>
+        <br>
+        <!-- 按钮 -->
+        <div class="btn-group dropup">
+            <button type="button" class="btn btn-lg btn-default">请选择</button>
+            <button type="button" class="btn btn-lg btn-default dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="#">Action</a>
+                </li>
+                <li>
+                    <a href="#">Another action</a>
+                </li>
+                <li>
+                    <a href="#">Something else here</a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                    <a href="#">Separated link</a>
+                </li>
+            </ul>
+        </div>
+        <!-- 表单 -->
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                </div>
+            </div>
+        </form>
+
+        <input type="text" class="form-control" placeholder="文本框">
+        <textarea class="form-control" rows="5"></textarea>
+
+        <!-- 导航 -->
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active">
+                <a href="#">Home</a>
+            </li>
+            <li role="presentation">
+                <a href="#">Profile</a>
+            </li>
+            <li role="presentation">
+                <a href="#">Messages</a>
+            </li>
+            <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li>
+                        <a>aa</a>
+                    </li>
+                    <li>
+                        <a>bb</a>
+                    </li>
+                    <li>
+                        <a>cc</a>
+                    </li>
+                    <li>
+                        <a>dd</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <img alt="Brand" src="">
+                    </a>
+                </div>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button class="form-control">Submit</button>
+                </form>
+                <p class="navbar-text navbar-right">Signed in as Mark Otto</p>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="#">Link
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">Link</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- 路径导航 -->
+        <ol class="breadcrumb">
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">Library</a>
+            </li>
+            <li class="active">Data</li>
+        </ol>
+
+        <!-- 面板 -->
+        <div class="panel panel-info" style="width: 280px;">
+            <div class="panel-heading">
+                <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body" style="padding: 0;">
+                <ul class="list-group" style="margin-bottom: 0;">
+                    <li class="list-group-item">Cras justo odio</li>
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Morbi leo risus</li>
+                    <li class="list-group-item">Porta ac consectetur ac</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+            </div>
+            <!-- <div class="panel-footer">
+                Panel footer
+            </div> -->
+        </div>
+
+        <!-- 输入框 -->
+        <div class="input-group input-group-lg">
+            <span class="input-group-addon" id="sizing-addon1">@</span>
+            <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputFile">File input</label>
+                <input type="file" id="exampleInputFile">
+                <p class="help-block">Example block-level help text here.</p>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> Check me out
+                </label>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+
+        <div class="form-group has-success has-feedback">
+            <label class="control-label" for="inputSuccess2">Input with success</label>
+            <input type="text" class="form-control" id="inputSuccess2" aria-describedby="inputSuccess2Status">
+            <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+            <span id="inputSuccess2Status" class="sr-only">(success)</span>
+        </div>
+        <div class="form-group has-warning has-feedback">
+            <label class="control-label" for="inputWarning2">Input with warning</label>
+            <input type="text" class="form-control" id="inputWarning2" aria-describedby="inputWarning2Status">
+            <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>
+            <span id="inputWarning2Status" class="sr-only">(warning)</span>
+        </div>
+        <div class="form-group has-error has-feedback">
+            <label class="control-label" for="inputError2">Input with error</label>
+            <input type="text" class="form-control" id="inputError2" aria-describedby="inputError2Status">
+            <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+            <span id="inputError2Status" class="sr-only">(error)</span>
+        </div>
+        <div class="form-group has-success has-feedback">
+            <label class="control-label" for="inputGroupSuccess1">Input group with success</label>
+            <div class="input-group">
+                <span class="input-group-addon">@</span>
+                <input type="text" class="form-control" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status">
+            </div>
+            <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+            <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
+        </div>
+
+        <!-- 下拉列表 -->
+        <select class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+
+    </div>
+
+</body>
+
+</html>

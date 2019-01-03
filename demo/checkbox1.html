@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+
+    <style type="text/css">
+        label {
+            display: inline-flex;
+            display: -webkit-inline-flex;
+            position: relative;
+            cursor: pointer;
+            width: 6%;
+        }
+        
+        .box {
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            border: 1px solid lightblue;
+            background: lightblue;
+        }
+        
+        .fa-check {
+            position: absolute;
+            top: 3px;
+            left: 2px;
+            color: #fff;
+            border: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <label>
+			<input type="checkbox" class="box" />
+			<span class="remeber">
+				香蕉
+			</span>
+			<i class="fa fa-fw"></i>
+		</label>
+        <label class="wrapper">
+			<input type="checkbox" class="box" />
+			<span class="remeber">
+				苹果
+			</span>
+			<i class="fa fa-fw"></i>
+		</label>
+        <label class="wrapper">
+			<input type="checkbox" class="box" />
+			<span class="remeber">
+				西瓜
+			</span>
+			<i class="fa fa-fw"></i>
+		</label>
+        <label class="wrapper">
+			<input type="checkbox" class="box" />
+			<span class="remeber">
+				橘子
+			</span>
+			<i class="fa fa-fw"></i>
+		</label>
+    </div>
+
+    <br>
+
+    <input type="button" name="" id="check-all" value="全选" />
+    <input type="button" name="" id="check-no" value="不选" />
+    <input type="button" name="" id="check-reverse" value="反选" />
+
+
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+
+            $('body').on("click", ".box", function() {
+                $(this).parent().find('.fa').toggleClass('fa-check');
+            });
+
+            //全选 
+            $("#check-all").click(function() {
+                $(".wrapper label i").each(function() {
+                    $(this).addClass("fa-check");
+                })
+            });
+
+            //不选
+            $("#check-no").click(function() {
+                $(".wrapper label i").each(function() {
+                    $(this).removeClass("fa-check");
+                })
+            });
+
+            //反选
+            $("#check-reverse").click(function() {
+                $(".wrapper label i").each(function() {
+                    $(this).toggleClass("fa-check");
+                })
+            });
+
+
+        })
+    </script>
+</body>
+
+</html>

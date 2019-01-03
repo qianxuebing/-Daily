@@ -1,0 +1,457 @@
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+
+<link href="~/Content/Pages/Index.css" rel="stylesheet" />
+
+<style>
+    .order-title .pagetitle {
+        font-size: 2rem;
+        margin: 2rem 0;
+        color: #176497;
+    }
+
+    .order-title {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .order-title span {
+        /*float: right;*/
+        padding: 2rem 1rem 1rem 1rem;
+        color: #176497;
+        font-size: 2rem;
+    }
+
+    .invoice-wrap {
+        padding: 0.5rem 1rem;
+    }
+
+    .nav-list ul {
+        display: flex;
+        margin-bottom: o !important;
+        border-bottom: 1px solid #146596;
+    }
+
+    .nav-list ul li {
+        font-size: 1.5rem;
+        flex: 1;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .nav-list ul li a {
+        color: #146596;
+        padding: 1rem;
+        display: block;
+        font-weight: bold;
+    }
+
+    .current {
+        border-bottom: 2px solid #1489c7;
+    }
+
+    .order-item {
+        background: #bee1ea;
+        margin-bottom: 1rem;
+
+    }
+
+    .order-des {
+        padding: 0 1rem;
+    }
+
+    .order-des .order-channel {
+        border-bottom: 1px solid #0162c3;
+        color: #176497;
+        padding: 0 1rem;
+    }
+
+    .order-channel h4 {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+        float: left;
+    }
+
+    .order-channel span {
+        float: right;
+        font-size: 1.6rem;
+        color: #d55514;
+        margin-top: 0.7rem;
+    }
+
+    .order-box {
+        width: 100%;
+    }
+
+    .order-box .item-wrap {
+        margin: 1rem 0;
+        background: #a7d3e1;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .item-wrap .item-content {
+        display: flex;
+        width: 100%;
+        height: 8.7rem;
+    }
+
+    .item-content .item-img {
+        width: 30%;
+        height: 100%;
+    }
+
+    .item-img img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .item-content .information-item {
+        flex: 1;
+        padding: 1rem 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    .information-item p {
+        margin-bottom: 0;
+    }
+
+    .information-item p span {
+        display: inline-block;
+    }
+
+    .information-item p span:last-child {
+        float: right;
+    }
+
+    .information-item p:first-child span:first-child {
+        font-weight: bold;
+        color: #176497;
+    }
+
+    .information-item p:first-child span:last-child {
+        color: #595757;
+    }
+
+    .information-item p:last-child span:first-child {
+        font-size: 1.2rem;
+    }
+
+    .order-item .order-infor {
+        padding: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .order-infor .order-number {
+        display: inline-block;
+        width: 42%;
+        color: #737a7c;
+    }
+
+    .order-infor .order-price i {
+        color: #176497;
+        font-size: 1.7rem;
+        font-weight: bold;
+    }
+
+    .item-wrapper .item-box {
+        display: none;
+    }
+
+    .item-wrapper .item-box:first-child {
+        display: block;
+    }
+
+    .search-block {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 999;
+        background: #fff;
+        display: none;
+    }
+
+    .search-item {
+        position: relative;
+        width: 90%;
+        margin: 2rem auto 0;
+    }
+
+    .search-input {
+        width: 100%;
+        height: 3rem;
+        background: #D8EDF2;
+        border: 0;
+        border-radius: 1.5rem;
+        padding: .5rem 3rem .5rem 1rem;
+    }
+
+    .btn-search {
+        position: absolute;
+        right: 0;
+        color: #1474A3;
+        height: 3rem;
+        line-height: 2rem;
+        font-size: 3rem;
+        width: 3rem;
+        top: 0;
+        display: block;
+    }
+</style>
+
+<div class="invoice-wrap">
+    <div class="order-title">
+        <h3>我的订单</h3>
+        <span class="iconfont icon-sousuo"></span>
+    </div>
+    <div class="nav-list">
+        <ul class="nav-wrap">
+            <li class="current" data-id="#order-all">
+                <a href="javascript:;">全部</a>
+            </li>
+            <li data-id="#pending-delivery">
+                <a href="javascript:;">待发货</a>
+            </li>
+            <li data-id="#dispatch">
+                <a href="javascript:;">派送中</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="item-wrapper">
+    <div class="item-box" id="order-all">
+        <div class="order-item">
+            <div class="order-des">
+                <div class="order-channel clearfix">
+                    <h4>官网&nbsp;
+                        <small>2018-1-1 18:16</small>
+                    </h4>
+                    <span>交易成功</span>
+                </div>
+            </div>
+            <div class="order-box">
+                <div class="item-wrap">
+                    <div class="item-content">
+                        <div class="item-img">
+                            <img src="~/Images/toothbrush.png" />
+                        </div>
+                        <div class="information-item">
+                            <p class="clearfix">
+                                <span>飞利浦电动牙刷</span>
+                                <span>￥999</span>
+                            </p>
+                            <p class="clearfix">
+                                <span>CTNXXX</span>
+                                <span>x1</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-wrap">
+                    <div class="item-content">
+                        <div class="item-img">
+                            <img src="~/Images/toothbrush.png" />
+                        </div>
+                        <div class="information-item">
+                            <p class="clearfix">
+                                <span>飞利浦电动牙刷</span>
+                                <span>￥999</span>
+                            </p>
+                            <p class="clearfix">
+                                <span>CTNXXX</span>
+                                <span>x1</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-infor">
+                <span class="order-number">订单号：
+                    <i>10325408</i>
+                </span>
+                <span class="order-count">共
+                    <i>2</i>件商品</span>
+                <span class="order-price">合计：
+                    <i>￥12344</i>
+                </span>
+            </div>
+        </div>
+        <div class="order-item">
+            <div class="order-des">
+                <div class="order-channel clearfix">
+                    <h4>呼叫中心&nbsp;
+                        <small>2018-1-1 18:16</small>
+                    </h4>
+                    <span>待发货</span>
+                </div>
+            </div>
+            <div class="order-box">
+                <div class="item-wrap">
+                    <div class="item-content">
+                        <div class="item-img">
+                            <img src="~/Images/toothbrush.png" />
+                        </div>
+                        <div class="information-item">
+                            <p class="clearfix">
+                                <span>挂烫机</span>
+                                <span>￥399</span>
+                            </p>
+                            <p class="clearfix">
+                                <span>CTNXXX</span>
+                                <span>x1</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-infor">
+                <span class="order-number">订单号：
+                    <i>10325408</i>
+                </span>
+                <span class="order-count">共
+                    <i>1</i>件商品</span>
+                <span class="order-price">合计：
+                    <i>￥399</i>
+                </span>
+            </div>
+        </div>
+        <div class="order-item">
+            <div class="order-des">
+                <div class="order-channel clearfix">
+                    <h4>天猫&nbsp;
+                        <small>2018-1-1 18:16</small>
+                    </h4>
+                    <span>派送中</span>
+                </div>
+            </div>
+            <div class="order-box">
+                <div class="item-wrap">
+                    <div class="item-content">
+                        <div class="item-img">
+                            <img src="~/Images/toothbrush.png" />
+                        </div>
+                        <div class="information-item">
+                            <p class="clearfix">
+                                <span>空气净化器</span>
+                                <span>￥2999</span>
+                            </p>
+                            <p class="clearfix">
+                                <span>CTNXXX</span>
+                                <span>x1</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-infor">
+                <span class="order-number">订单号：
+                    <i>10325408</i>
+                </span>
+                <span class="order-count">共
+                    <i>1</i>件商品</span>
+                <span class="order-price">合计：
+                    <i>￥2999</i>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="item-box" id="pending-delivery">
+        <div class="order-item">
+            <div class="order-des">
+                <div class="order-channel clearfix">
+                    <h4>呼叫中心&nbsp;
+                        <small>2018-1-1 18:16</small>
+                    </h4>
+                    <span>待发货</span>
+                </div>
+            </div>
+            <div class="order-box">
+                <div class="item-wrap">
+                    <div class="item-content">
+                        <div class="item-img">
+                            <img src="~/Images/toothbrush.png" />
+                        </div>
+                        <div class="information-item">
+                            <p class="clearfix">
+                                <span>挂烫机</span>
+                                <span>￥399</span>
+                            </p>
+                            <p class="clearfix">
+                                <span>CTNXXX</span>
+                                <span>x1</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-infor">
+                <span class="order-number">订单号：
+                    <i>10325408</i>
+                </span>
+                <span class="order-count">共
+                    <i>1</i>件商品</span>
+                <span class="order-price">合计：
+                    <i>￥399</i>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="item-box" id="dispatch">
+        <div class="order-item">
+            <div class="order-des">
+                <div class="order-channel clearfix">
+                    <h4>天猫&nbsp;
+                        <small>2018-1-1 18:16</small>
+                    </h4>
+                    <span>派送中</span>
+                </div>
+            </div>
+            <div class="order-box">
+                <div class="item-wrap">
+                    <div class="item-content">
+                        <div class="item-img">
+                            <img src="~/Images/toothbrush.png" />
+                        </div>
+                        <div class="information-item">
+                            <p class="clearfix">
+                                <span>空气净化器</span>
+                                <span>￥2999</span>
+                            </p>
+                            <p class="clearfix">
+                                <span>CTNXXX</span>
+                                <span>x1</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-infor">
+                <span class="order-number">订单号：
+                    <i>10325408</i>
+                </span>
+                <span class="order-count">共
+                    <i>1</i>件商品</span>
+                <span class="order-price">合计：
+                    <i>￥2999</i>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    $(function () {
+        $(".nav-list").on("click", ".nav-wrap li", function () {
+            var $id = $(this).data("id");
+            $(this).addClass("current").siblings("li").removeClass("current");
+            $($id).show().siblings().hide();
+        })
+
+    })
+</script>

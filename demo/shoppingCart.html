@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/cart.css">
+	<script type="text/javascript">
+		(function(win,doc){
+				// 设置根节点字体
+			var resize='orientationchange' in window?'orientationchange':'resize';
+			function change(){
+				var html=doc.documentElement;
+		        var deviceWidth = html.clientWidth;
+				  html.style.fontSize=deviceWidth/37.5+'px';
+		    }
+			win.addEventListener(resize,change,false);
+			win.addEventListener('load',change,false);
+			doc.addEventListener('DOMContentLoaded',change,false);
+		})
+	
+	</script>
+</head>
+<body>
+	<!-- head -->
+	<div class="head">
+		<p>购物车</p>
+		<div class="head-img">
+			<img src="../../img/d_share.png">
+		</div>
+	</div>
+	
+	<!-- main -->
+		<div class="main">
+			<div class="main-box">
+				<div class="main1">
+					<div class="main1-a">
+						<div class="allcheck">
+							<input type="checkbox" class="checkbox" name="">
+						</div>
+						<div class="lttx">
+							<img src="https://yst-pjyc-server.oss-cn-beijing.aliyuncs.com/datas/image/20180317/20180317114730239520503.png">
+						</div>
+						<div class="ltwen">
+							<p>老炮</p>
+						</div>
+						<div class="ltsl">
+							
+						</div>
+						<div class="back">
+							<img src="../../img/d_cart3.png">
+						</div>
+					</div>
+				</div>
+				<div class="main2 shop0" data-price="0.01" data-psid="1702" data-cartid="242" data-num="1" data-kunum="1" data-zongjia="0.01">
+					<div class="check">
+						<input type="checkbox" class="checkbox" name="">
+					</div>
+					<div class="sptp">
+						<img src="https://yst-pjyc-server.oss-cn-beijing.aliyuncs.com/datas/image/20180317/20180317163702969961566.jpeg">
+					</div>
+					<div class="spwz">
+						<p class="sp-mc">压迫感</p>
+						<p class="sp-color">白色</p>
+						<div class="spzj">
+							<p class="maney">¥<span class="maney1">0.01</span></p>
+							<div class="spzj-you">
+								<button class="jian">-</button><button class="num" value="1">1</button><button class="jia">+</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="main-box">
+				<div class="main1">
+					<div class="main1-a">
+						<div class="allcheck">
+							<input type="checkbox" class="checkbox" name="">
+						</div>
+						<div class="lttx">
+							<img src="https://yst-pjyc-server.oss-cn-beijing.aliyuncs.com/datas/image/20180317/20180317114502725808403.png">
+						</div>
+						<div class="ltwen">
+							<p>山大王</p>
+						</div>
+						<div class="ltsl"></div>
+						<div class="back">
+							<img src="../../img/d_cart3.png">
+						</div>
+					</div>
+				</div>
+				<div class="main2 shop0" data-price="0.1" data-psid="1676" data-cartid="243" data-num="1" data-kunum="6" data-zongjia="0.1">
+					<div class="check">
+						<input type="checkbox" class="checkbox" name="">
+					</div>
+					<div class="sptp">
+						<img src="https://yst-pjyc-server.oss-cn-beijing.aliyuncs.com/datas/image/20180317/20180317152045031040251.jpeg">
+					</div>
+					<div class="spwz">
+						<p class="sp-mc">小白盒</p>
+						<p class="sp-color">2</p>
+						<div class="spzj">
+							<p class="maney">¥<span class="maney1">0.1</span></p>
+							<div class="spzj-you"><button class="jian">-</button><button class="num" value="1">1</button><button class="jia">+</button>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="main2 shop1" data-price="0.1" data-psid="1689" data-cartid="244" data-num="1" data-kunum="6" data-zongjia="0.1">
+					<div class="check">
+						<input type="checkbox" class="checkbox" name="">
+					</div>
+					<div class="sptp">
+						<img src="https://yst-pjyc-server.oss-cn-beijing.aliyuncs.com/datas/image/20180317/20180317155703697584914.jpeg">
+					</div>
+					<div class="spwz">
+						<p class="sp-mc">狗狗</p>
+						<p class="sp-color">2</p>
+						<div class="spzj">
+							<p class="maney">¥<span class="maney1">0.1</span></p>
+							<div class="spzj-you"><button class="jian">-</button><button class="num" value="1">1</button><button class="jia">+</button>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- foot -->
+	<div class="foot">
+		<div class="footoot">
+			<div class="foot-left">
+				<div class="quanxuan">
+					<input type="checkbox" class="checkbox" name="" >
+				</div>
+				<p class="qx">全选</p>
+			</div>
+			<div class="foot-right">
+				<p class="red">商品总价：<span class="allmaney-a">¥<span id="allmaney">0</span></span></p>
+				<button class="btn">去结算</button>
+			</div>
+		</div>
+	</div>
+	<!-- 空 -->
+	<div class="nono">
+		<div class="nono-img">
+			<img src="../../img/d_shopcart.png">
+		</div>
+		<p>购物车竟然是空的~</p>
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+//店铺全选  取消全选
+var status=false;
+var len1=0;
+var all_len=0;
+var all_check=0;
+$(document).on('click','.allcheck input',function(){
+	var that=$(this);
+	var child_input=$(this).parent().parent().parent().parent().find('.main2 input');
+	$.each(child_input, function() {
+		if(that.is(':checked')){
+			$(this).prop('checked',true);
+			$(this).parent().addClass('checks');
+			that.parent().addClass('checks');
+			
+		}else{
+			$(this).prop('checked',false);
+			$(this).parent().removeClass('checks');
+			that.parent().removeClass('checks');
+		}
+	});
+})
+//单选取消全选
+$(document).on('click','.main2 input',function(){
+	var inps=$(this).parents(".main-box").find('.main2 input');
+	var len2=inps.length;
+	$.each(inps, function(i,elem) {
+		if($(elem).prop('checked')){
+			$(elem).parent().addClass('checks');
+			len1++;
+		}else{
+			$(elem).parent().removeClass('checks');
+		}
+	});
+	var per_inp=$(this).parents(".main-box").find('.main1 .allcheck input');
+	if(len2==len1){
+		$(per_inp).prop('checked',true);
+		$(per_inp).parent().addClass('checks');
+	}
+	if(len2!=len1){
+		$(per_inp).prop('checked',false);
+		$(per_inp).parent().removeClass('checks');
+	}
+	len1=0;
+})
+//全选
+$(document).on('click','.quanxuan input',function(){
+	var all_inp=$('.main-box input');
+	var all_status=$(this).prop('checked');
+	$.each(all_inp,function(){
+		$(this).prop('checked',all_status);
+		if(all_status){
+			$(this).parent().addClass('checks');
+		}else{
+			$(this).parent().removeClass('checks');
+		}
+	})
+})
+//单独input
+$(document).on('click','input',function(){
+	var all_inp=$('.main-box input');
+	// console.log(all_inp)
+	all_len=all_inp.length;
+	if($(this).is(':checked')){
+		$(this).parent().addClass('checks');
+	}else{
+		$(this).parent().removeClass('checks');
+	}
+	$.each(all_inp,function(i,elem){
+		if($(elem).prop('checked')){
+			all_check++;
+		}
+	})
+	if(all_check==all_len){
+		$('.quanxuan input').prop('checked',true);
+		$('input').parent().addClass('checks');
+	}else{
+		$('.quanxuan').removeClass('checks')
+		$('.quanxuan input').prop('checked',false);
+	}
+	all_check=0;
+})
+</script>
+</html>

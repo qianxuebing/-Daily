@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>cropper图片剪裁上传</title>
+
+		<link rel="stylesheet" type="text/css" href="cropper/cropper.min.css" />
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="cropper/cropper.min.js"></script>
+	</head>
+
+	<body>
+
+		<div class="container">
+			<img src="Images/blower.png">
+		</div>
+		<script type="text/javascript">
+			$('.container > img').cropper({
+				aspectRatio: 16 / 9,
+				crop: function(data) {
+					// Output the result data for cropping image.
+				}
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="list-group"></ul>
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+    $(function() {
+        $.ajax({
+            type: 'POST',
+            url: 'index.json',
+            success: function(sucData) {
+                if (!sucData.state) {
+                    return alert("获取数据失败");
+                }
+                initLi(sucData);
+            },
+            error: function(errData) {
+                return alert("获取数据错误");
+                // return alert(JSON.stringify(errData));
+            }
+
+        });
+    })
+
+    function initLi(data) {
+        var html = "";
+        $.each(data, function(index, value) {
+            html =
+                `<ul><li>${data[index].name}</li><li>${data[index].age}</li><li>${data[index].sex}</li></ul>`
+            $("body").append(html);
+        })
+
+    }
+</script>
+
+</html>

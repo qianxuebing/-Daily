@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="js/rolldate/rolldate.css" />
+    <title>日期插件</title>
+    <style>
+    input{
+        display: block;
+        border-radius: 4px;
+        outline: none;
+        border: 1px solid #ccc;
+        width: 200px;
+        height: 30px;
+        margin: 20px auto;
+        padding-right: 10px;
+        text-align: right;
+    }
+    </style>
+  </head>
+  <body>
+
+    <input readonly type="text" id="date" placeholder="YY-MM-DD" />
+
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/rolldate/rolldate.js"></script>
+    <script>
+      $(function() {
+        new rolldate.Date({
+          el: "#date",
+          format: "YYYY-MM-DD",
+          beginYear: 2000,
+          endYear: 2100,
+          theme: "blue",
+          tapBefore: function(el) {
+            console.log("插件开始触发");
+          },
+          moveEnd: function(el, iscroll) {
+            console.log("滚动结束");
+          },
+          confirmBefore: function(el, date) {
+            console.log("确定按钮触发");
+          },
+          confirmEnd: function(el, date) {
+            console.log("插件运行结束");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

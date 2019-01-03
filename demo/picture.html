@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <img src="" alt="">
+    <img src="Images/blower.png" alt="">
+    <div></div>
+
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script>
+        $(function() {
+            checkImg($("img").attr("src"));
+        })
+
+        function checkImg(src) {
+            var imgsrcdefault = "Images/blower.png";
+            if (src == "") {
+                return imgsrcdefault;
+            } else {
+                var img = new Image();
+                img.src = src;
+                console.log(img.width);
+                if (img.width < 2) {
+                    return imgsrcdefault;
+                } else {
+                    return src;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

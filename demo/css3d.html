@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <title>CSS3</title>
+    <style>
+        .nav {
+            margin-top: 10px;
+        }
+        
+        .nav li {
+            text-align: center;
+            font-size: 18px;
+        }
+        
+        .btn-group {
+            position: absolute;
+            top: 10px;
+            right: 50px;
+        }
+        
+        .dropdown-menu {
+            min-width: 150px !important;
+        }
+        
+        .wrapper {
+            position: absolute;
+            width: 200px;
+            height: 100px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            perspective: 800;
+            -webkit-perspective: 800;
+        }
+        
+        .wrapper div {
+            width: inherit;
+            height: inherit;
+            background-color: #EEEE00;
+            cursor: pointer;
+            text-align: center;
+            line-height: 100px;
+            color: #fff;
+            animation: one 3s linear infinite;
+            border-radius: 5px 100px 5px 100px;
+            letter-spacing: 5px;
+            font-size: 20px;
+            font-weight: 700;
+            opacity: 0.6;
+            filter: alpha(opacity=60);
+        }
+        
+        .two {
+            display: inline-block;
+            width: 49%;
+            padding: 0 40px;
+            columns: 100px 3;
+            -webkit-columns: 100px 3;
+            column-gap: 40px;
+            -webkit-column-gap: 40px;
+            column-rule: green dashed 2px;
+            box-sizing: border-box;
+        }
+        
+        .two h3 {
+            column-span: all;
+            -webkit-column-span: all;
+        }
+        
+        .btn-hover {
+            display: inline-block;
+            border: 0;
+            outline: 0;
+            background-color: #f4511e;
+            color: #fff;
+            font-size: 20px;
+            width: 100px;
+            margin: 30px;
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+        
+        .btn-hover span {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        
+        .btn-hover span:after {
+            content: '»';
+            position: absolute;
+            top: 0;
+            right: -10px;
+            opacity: 0;
+            transition: 0.5s;
+        }
+        
+        .btn-hover:hover span {
+            padding-right: 15px;
+        }
+        
+        .btn-hover:hover span:after {
+            opacity: 1;
+            right: 0px;
+        }
+        
+        .btn-click {
+            position: relative;
+            background-color: #4CAF50;
+            border: none;
+            font-size: 20px;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            width: 100px;
+            text-align: center;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            text-decoration: none;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        .btn-click::after {
+            content: "";
+            background: #90EE90;
+            display: block;
+            position: absolute;
+            padding-top: 300%;
+            padding-left: 350%;
+            margin-left: -20px !important;
+            margin-top: -120%;
+            opacity: 0;
+            transition: all 0.8s
+        }
+        
+        .btn-click:active::after {
+            padding: 0;
+            margin: 0;
+            opacity: 1;
+            transition: 0s
+        }
+        
+        .btn-click2 {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: 0;
+            border-radius: 10px;
+            box-shadow: 0 9px #eee;
+            margin: 20px;
+        }
+        
+        .btn-click2:hover {
+            background-color: #3e8e41;
+        }
+        
+        .btn-click2:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #ddd;
+            transform: translateY(4px);
+        }
+        
+        .list-group {
+            display: inline-block;
+            width: 310px;
+            margin: 20px 10px;
+        }
+        
+        .list-group-item {
+            word-break: break-all;
+        }
+        
+        @keyframes one {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(359deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active">
+            <a href="#">
+                <i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp;首页
+            </a>
+        </li>
+        <li role="presentation">
+            <a href="#">
+                <i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;关于我们
+            </a>
+        </li>
+        <li role="presentation">
+            <a href="#">
+                <i class="fa fa-pencil fa-fw" aria-hidden="true"></i>&nbsp;后台应用编辑
+            </a>
+        </li>
+        <li role="presentation">
+            <a href="#">
+                <i class="fa fa-cog fa-fw" aria-hidden="true"></i>&nbsp;系统设置
+            </a>
+        </li>
+    </ul>
+    <div class="btn-group">
+        <a class="btn btn-success" href="#"><i class="fa fa-user fa-fw"></i> 用户</a>
+        <a class="btn btn-success dropdown-toggle" data-toggle="dropdown" href="#">
+            <span class="fa fa-caret-down" title="打开下拉菜单"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="#"><i class="fa fa-pencil fa-fw"></i> 编辑</a></li>
+            <li><a href="#"><i class="fa fa-trash-o fa-fw"></i> 删除</a></li>
+            <li><a href="#"><i class="fa fa-ban fa-fw"></i> 屏蔽</a></li>
+            <li class="divider"></li>
+            <li><a href="#"><i class="fa fa-unlock"></i> 锁定管理员</a></li>
+        </ul>
+    </div>
+    <div class="list-group">
+        <a class="list-group-item" href="#">当我年轻的时候，我梦想改变这个世界</a>
+        <a class="list-group-item" href="#">当我成熟以后，我发现我不能够改变这个世界</a>
+        <a class="list-group-item" href="#">后台应用编辑</a>
+        <a class="list-group-item" href="#">1787081770572656272808-9-17557772089-8598727629</a>
+    </div>
+    <div class="list-group">
+        <a class="list-group-item" href="#">当我年轻的时候，我梦想改变这个世界</a>
+        <a class="list-group-item" href="#">当我成熟以后，我发现我不能够改变这个世界</a>
+        <a class="list-group-item" href="#">后台应用编辑</a>
+        <a class="list-group-item" href="#">系统设置</a>
+    </div>
+    <div class="list-group">
+        <a class="list-group-item" href="#">当我年轻的时候，我梦想改变这个世界</a>
+        <a class="list-group-item" href="#">当我成熟以后，我发现我不能够改变这个世界</a>
+        <a class="list-group-item" href="#">后台应用编辑</a>
+        <a class="list-group-item" href="#">系统设置</a>
+    </div>
+    <div class="list-group">
+        <a class="list-group-item" href="#">当我年轻的时候，我梦想改变这个世界</a>
+        <a class="list-group-item" href="#">当我成熟以后，我发现我不能够改变这个世界</a>
+        <a class="list-group-item" href="#">后台应用编辑</a>
+        <a class="list-group-item" href="#">ahhfhklhjdhfjlghjlshklhjglhjhsjjohsjhklhjflshhklslkhklsjlfhsjlhshljhlshlkhjlshj</a>
+    </div>
+
+    <div class="wrapper">
+        <div class="one">一叶知秋</div>
+    </div>
+    <div class="two">
+        <h3>年轻不懂事
+            <一>
+        </h3>
+        “当我年轻的时候，我梦想改变这个世界；当我成熟以后，我发现我不能够改变这个世界，我将目光缩短了些，决定只改变我的国家；当我进入暮年以后，我发现我不能够改变我们的国家，我的最后愿望仅仅是改变一下我的家庭，但是，这也不可能。当我现在躺在床上，行将就木时，我突然意识到：如果一开始我仅仅去改变我自己，然后，我可能改变我的家庭；在家人的帮助和鼓励下，我可能为国家做一些事情；然后，谁知道呢?我甚至可能改变这个世界。”
+    </div>
+    <div class="two">
+        <h3>年轻不懂事
+            <二>
+        </h3>
+        “当我年轻的时候，我梦想改变这个世界；当我成熟以后，我发现我不能够改变这个世界，我将目光缩短了些，决定只改变我的国家；当我进入暮年以后，我发现我不能够改变我们的国家，我的最后愿望仅仅是改变一下我的家庭，但是，这也不可能。当我现在躺在床上，行将就木时，我突然意识到：如果一开始我仅仅去改变我自己，然后，我可能改变我的家庭；在家人的帮助和鼓励下，我可能为国家做一些事情；然后，谁知道呢?我甚至可能改变这个世界。”
+    </div>
+    <div class="two">
+        <h3>年轻不懂事
+            <三>
+        </h3>
+        “当我年轻的时候，我梦想改变这个世界；当我成熟以后，我发现我不能够改变这个世界，我将目光缩短了些，决定只改变我的国家；当我进入暮年以后，我发现我不能够改变我们的国家，我的最后愿望仅仅是改变一下我的家庭，但是，这也不可能。当我现在躺在床上，行将就木时，我突然意识到：如果一开始我仅仅去改变我自己，然后，我可能改变我的家庭；在家人的帮助和鼓励下，我可能为国家做一些事情；然后，谁知道呢?我甚至可能改变这个世界。”
+    </div>
+    <div class="two">
+        <h3>年轻不懂事
+            <四>
+        </h3>
+        “当我年轻的时候，我梦想改变这个世界；当我成熟以后，我发现我不能够改变这个世界，我将目光缩短了些，决定只改变我的国家；当我进入暮年以后，我发现我不能够改变我们的国家，我的最后愿望仅仅是改变一下我的家庭，但是，这也不可能。当我现在躺在床上，行将就木时，我突然意识到：如果一开始我仅仅去改变我自己，然后，我可能改变我的家庭；在家人的帮助和鼓励下，我可能为国家做一些事情；然后，谁知道呢?我甚至可能改变这个世界。”
+    </div>
+    <button class="btn-hover"><span>Hover</span></button>
+    <button class="btn-click">Click</button>
+    <button class="btn-click2">Click</button>
+    <i class="fa fa-check-circle fa-2x" style="color:#90EE90;"></i>
+    <i class="fa fa-check-square-o fa-2x" style="color:#f4511e;"></i>
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="Bootstrap/js/bootstrap.min.js"></script>
+<script>
+    $(function() {
+        $(".nav li").on("click", function() {
+            $(this).addClass("active").siblings().removeClass("active");
+        })
+    })
+</script>
+
+</html>

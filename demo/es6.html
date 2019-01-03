@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>es6</title>   
+</head>
+
+<body>
+		
+    <script>
+    	
+//  	解构赋值
+		
+		let [a,b,c] = [1,2,3,];
+		document.write(a); // 1
+		document.write("<br>");
+		
+//		函数扩展
+//		1.默认参数
+		function log(x,y='word'){
+			document.write(x+' '+y);
+			document.write("</br>");
+		}
+		log('hello','China');
+		
+		function Point(x=0,y=0){
+			this.x = x;
+			this.y = y;
+		}
+		const p = new Point();
+		p.x = 3;
+		document.write(p.x);
+		document.write('<br>');
+//		字符串遍历起接口  for ...of
+		for(let codePoint of 'foo'){
+			console.log(codePoint);
+		}
+    	
+//  	数组的扩展。
+//		1.扩展运算符: ...
+//      var str = "abcd";
+//      console.log(str);
+//      //字符串转数组：...
+//      console.log([...str]);
+        
+        let arr1 = [1,2,3];
+        let arr2 = [4,5,6];
+        arr1.push(...arr2);
+        document.write(arr1);
+        document.write('<br>');
+        
+        var arr = [1,1,3,9,0,5,6,0,7,9,9];
+        //Set():去重 Array.from(new Set(arr));
+        //Array.from():对象转数组
+        var newArr = Array.from(new Set(arr));
+        console.log(newArr);
+//      sort():排序
+        newArr.sort(function(a,b){
+        	return a-b;
+        });        
+         console.log(newArr);
+         for(var i = 0; i<newArr.length; i++){
+         	console.log(arr[i]);
+         }
+         
+         
+         var users = [
+			  {name: "张含韵", "email": "zhang@email.com"},
+			  {name: "江一燕",   "email": "jiang@email.com"},
+			  {name: "李小璐",  "email": "li@email.com"}
+			];
+			
+//			map():映射。方便获得对象数组中的特定属性值们
+			var emails = users.map(function(user){
+				return user.email;
+			});
+			console.log(emails.join(','));
+			for(var j in emails){
+				document.write(emails[j]);
+				document.write("<br>");
+			}
+			
+//			filter():过滤 ，返回值只要是弱等于== true/false就可以了
+			var data = [0,1,2,3,];
+			var arrFilter = data.filter(function(item){
+				return item;
+			});
+			console.log(arrFilter);
+			
+			
+//			Promise对象:异步加载图片 
+			function loadImageAsync(url){
+				return new Promise((resolve,reject)=>{
+					const image = new Image();
+					image.onload = function(){
+						resolve(image);
+					}
+					image.onerror = function(){
+						reject(new Error('could not load image at'+url));
+					}
+					image.src = url;
+				})
+			}
+			
+			
+			const funcs = [];
+			for(let i = 0; i < 10; i ++){
+				funcs.push(()=>{
+					console.log(i)
+				})
+			}
+			funcs.forEach(func => func());
+			
+			setInterval(()=>{
+				const now = new Date();
+				const h = now.getHours().toString();
+				const m = now.getMinutes().toString();
+				const s = now.getSeconds().toString();
+//				console.log(`${h.padStart(2,0)}:${m.padStart(2,0)}:${s.padStart(2,0)}`)
+			},1000);
+			
+//			模拟一个模板字符串的实现
+			let address = '北京海淀区'
+		    let name = 'lala'
+		    let str = '${name}在${address}上班...'
+		    // 模拟一个方法 myTemplate(str) 最终输出 'lala在北京海淀区上班...'
+		    function myTemplate(str) {
+		        // try it
+		    }
+		    console.log(myTemplate(str)) // lala在北京海淀区上班...
+		
+		const name1="cc";
+		const gender = "male";
+		const hobby = "basketball";
+		function tag(strings){
+			
+		}
+		const str1 = tag`姓名:${name1},性别:${gender},爱好:${hobby}`
+		console.log(str1);
+		
+		
+		setTimeout(function() {
+	      console.log(1)
+	    }, 0);
+	    new Promise(function executor(resolve) {
+	      console.log(2);
+	      for( var i=0 ; i<10000 ; i++ ) {
+	        i == 9999 && resolve();
+	      }
+	      console.log(3);
+	    }).then(function() {
+	      console.log(4);
+	    });
+	    console.log(5);
+	    
+	    
+	    var q = [];
+	    for(let i = 0; i <10; i++){
+	    	q[i] = ()=>{
+	    		document.write(i);
+	    	}
+	    	
+	    }
+	    q[5]();
+	   		
+		document.write('<br>');
+		
+//		模板字符串
+		var name5 = 'lang',
+			age = 22,
+			say = ()=>{
+				return 'hello'
+			};
+		var strWord = `my name is ${name5},my age is ${age} and I can say ${say()}`
+		document.write(strWord);
+		
+		document.write('<br>');
+//		箭头函数
+		var foo = (x,y)=>{
+			return x+y
+		}
+		document.write(foo(1,7));
+		
+		document.write('<br>');
+		
+		function deo(){
+			setTimeout(()=>{
+				console.log('args',arguments)
+			},1000)
+		}
+		document.write(deo(1,2,3,4));
+		
+		//ES6 this 绑定
+//		1.箭头函数的this绑定看的是this所在的函数定义在哪个对象下，绑定到哪个对象则this就指向哪个对象
+//
+//		2.如果有对象嵌套的情况，则this绑定到最近的一层对象上
+
+//注意：
+//  1.函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象
+// 	2.不可以当做构造函数，也就是说，不可以使用new命令，否则会抛出一个错误
+//  3.不可以使用arguments对象，该对象在函数体内不存在，如果要用，可以使用Rest参数代替
+//  4.不可以使用yieId命令，因此箭头函数不能用作Generator函数
+		var obj = {
+			num:4,
+			fn:function(){				
+				var f = () => {
+					console.log(this);
+					setTimeout(() => {
+						console.log(this);
+					})
+				}
+				f();
+			}
+		}
+		
+		obj.fn();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">使用 jQuery AJAX 来改变文本</div>
+    <button id="btn">获取外部内容</button>    
+    <button id="add">添加</button>
+    <ul class="list"></ul>
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+    $(function () {
+        $("#btn").click(function(){
+            // load()方法
+            $("#demo").load("demo.txt",function(responseTxt,statusTxt,xhr){
+                if(statusTxt=="success"){
+                    alert("加载成功");
+                }
+                if(statusTxt=="error"){
+                    alert("加载失败");
+                }
+            })
+        });
+
+        $("#add").click(function(){
+            $.ajax({
+                type:'get',
+                url:'ul.json',
+                dataType:'json',
+                success:function(result){
+                    var result=JSON.stringify(result);
+                    for (let i = 0; i < result.length; i++) {
+                        $(".list").append("<li>"+result[i].name+"</li>");
+                        
+                    }
+                }
+            })
+        })
+
+
+
+    })
+</script>
+
+</html>
